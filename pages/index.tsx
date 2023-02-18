@@ -1,14 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
 import SearchBar from "../components/SearchBar";
 import MobileHeader from "../components/MobileHeader";
-import { decrement, increment } from "../state/slices/cartSlice";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../state/store";
 import Banner from "../components/Banner";
 import ProductCards from "../components/ProductCards";
+import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
      const cartCount = useSelector(
@@ -28,6 +27,7 @@ const Home: NextPage = () => {
                          <SearchBar cartCount={cartCount} />
                          <Banner />
                          <ProductCards />
+                         <Footer />
                     </main>
                </div>
           </div>

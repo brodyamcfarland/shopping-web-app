@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const Banner = () => {
      return (
-          <div className="border-b border-gray-600">
-               <div className="border-b border-gray-600">
+          <div className="border-l border-gray-600">
+               <div className="border-b shadow-lg border-gray-600">
                     <Image
                          src="/SAMPLEBANNER.png"
                          height={100}

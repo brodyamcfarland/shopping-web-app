@@ -79,7 +79,7 @@ const Sidebar = ({ cartCount }: Props) => {
                          <Link className="sidebarButtons" href="/" title="Cart">
                               <ShoppingCartIcon className="h-5 w-5" />
                               <p className="flex-1 text-left">Cart</p>
-                              <span className="h-4 w-4 bg-red-700 rounded-full flex items-center justify-center text-xs border shadow-md">
+                              <span className="h-5 w-5 bg-red-700 rounded-full flex items-center justify-center text-xs border shadow-md">
                                    {cartCount}
                               </span>
                          </Link>
@@ -161,7 +161,7 @@ const Sidebar = ({ cartCount }: Props) => {
                                    <p className="text-gray-400 w-10 pr-2">
                                         Total:
                                    </p>
-                                   <span>$ 150.00</span>
+                                   <span>$ {cartCount * 50}</span>
                               </div>
                          </div>
                     </div>

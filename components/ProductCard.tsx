@@ -1,15 +1,19 @@
 import Image from "next/image";
 import AddToCartButton from "./AddToCartButton";
+import { useRouter } from "next/router";
+import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 
 const ProductCard = () => {
+     const router = useRouter();
      return (
-          <div className="flex justify-start flex-col bg-[#171717] hover:bg-[#0e0e0e] border border-gray-600 rounded-lg w-[11rem] md:w-[13rem] h-[20rem] gap-2 opacity-90 hover:opacity-100 duration-300 hover:cursor-pointer">
+          <div className="flex relative justify-start flex-col bg-[#171717] hover:bg-[#0e0e0e] border border-gray-600 rounded-lg w-[11rem] md:w-[13rem] h-[20rem] gap-2 opacity-90 hover:opacity-100 duration-300">
                <Image
                     src="/SAMPLEBANNER.png"
                     height={100}
                     width={300}
                     alt="Logo"
-                    className="w-full h-2/5 rounded-tr-lg rounded-tl-lg border-b border-gray-600  object-cover"
+                    className="w-full h-2/5 rounded-tr-lg rounded-tl-lg border-b border-gray-600  object-cover hover:cursor-pointer"
+                    onClick={() => router.push("/shop")}
                />
                <h3 className="text-sm">Item Name</h3>
                <p className="text-xs text-gray-400 text-left px-2 line-clamp-5">
@@ -20,6 +24,12 @@ const ProductCard = () => {
                </p>
                <p className="flex-1">$50.00</p>
                <AddToCartButton />
+               <div
+                    className="absolute top-2 left-3"
+                    onClick={() => router.push("/shop")}
+               >
+                    <EllipsisVerticalIcon className="h-6 w-6 hover:bg-white/5 rounded-full hover:cursor-pointer" />
+               </div>
           </div>
      );
 };

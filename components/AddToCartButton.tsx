@@ -6,19 +6,25 @@ import {
 } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { incrementByAmount, increment } from "../state/slices/cartSlice";
+import { useSelector, useDispatch } from "react-redux";
+import type { RootState } from "../state/store";
 
 const AddToCartButton = () => {
-     const [items, setItems] = useState<number>(0);
+     const [items, setItems] = useState<number>(1);
+     const dispatch = useDispatch();
+
      const decrement = () => {
-          if (items <= 0) {
-               setItems(0);
+          if (items <= 1) {
+               setItems(1);
           } else {
                setItems(items - 1);
           }
      };
 
      const addToCart = () => {
-          toast.success("Item Added to Cart!");
+          dispatch(incrementByAmount(items));
+          toast.success(`${items} Item(s) Added to Cart!`);
      };
 
      return (
@@ -34,9 +40,10 @@ const AddToCartButton = () => {
                     {items < 0 ? 0 : items}
                </span>
                <button
-                    className="flex items-center justify-center"
+                    className="flex items-center justify-center disabled:opacity-50"
                     onClick={() => decrement()}
                     title="Decrease Quanitity"
+                    disabled={items === 1}
                >
                     <MinusCircleIcon className="h-6 w-6 hover:bg-white/30 rounded-full duration-300 ease-out" />
                </button>
