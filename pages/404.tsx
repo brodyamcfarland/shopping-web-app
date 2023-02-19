@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../components/Layout";
-import { Head } from "next/document";
 import Image from "next/image";
 
 const Custom404 = () => {

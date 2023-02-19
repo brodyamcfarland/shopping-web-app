@@ -8,6 +8,7 @@ const CartTotal = () => {
      const cartCount = useSelector(
           (state: RootState) => state.cartCounter.value
      );
+
      return (
           <Link
                href={"/cart"}

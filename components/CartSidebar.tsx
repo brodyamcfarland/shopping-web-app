@@ -5,6 +5,7 @@ import { RootState } from "../state/store";
 import CartPreviewTag from "./CartPreviewTag";
 import CartTotal from "./CartTotal";
 import CheckoutButton from "./CheckoutButton";
+import { motion } from "framer-motion";
 
 const CartSidebar = () => {
      const router = useRouter();
@@ -14,7 +15,15 @@ const CartSidebar = () => {
      );
 
      return (
-          <nav className="hidden md:flex flex-col w-[20rem] max-w-[20rem] border bg-[#171717] shadow-md border-gray-600">
+          <motion.nav
+               initial={{ x: 250 }}
+               animate={{ x: 0 }}
+               transition={{
+                    duration: 0.05,
+                    default: { ease: "linear" },
+               }}
+               className="hidden md:flex flex-col w-[20rem] max-w-[20rem] border bg-[#171717] shadow-md border-gray-600"
+          >
                <div className="flex flex-col h-full w-full">
                     <div
                          onClick={() => router.push("/")}
@@ -30,7 +39,7 @@ const CartSidebar = () => {
                     <CheckoutButton />
                     <CartTotal />
                </div>
-          </nav>
+          </motion.nav>
      );
 };
 
