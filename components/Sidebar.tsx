@@ -12,7 +12,6 @@ import {
      TagIcon,
 } from "@heroicons/react/24/outline";
 import { useSession, signIn, signOut } from "next-auth/react";
-import CartPreview from "./CartPreview";
 import { useSelector } from "react-redux";
 import { RootState } from "../state/store";
 import SignInButton from "./SignInButton";
@@ -139,8 +138,6 @@ const Sidebar = () => {
                               <SignInButton />
                          </div>
                     )}
-
-                    <CartPreview />
                </div>
           </header>
      );

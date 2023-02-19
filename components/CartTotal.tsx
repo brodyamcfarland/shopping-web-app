@@ -4,7 +4,7 @@ import type { RootState } from "../state/store";
 import CurrencyFormat from "react-currency-format";
 import Link from "next/link";
 
-const CartPreview = () => {
+const CartTotal = () => {
      const cartCount = useSelector(
           (state: RootState) => state.cartCounter.value
      );
@@ -33,7 +33,11 @@ const CartPreview = () => {
                               value={cartCount * 50}
                               thousandSeparator={true}
                               prefix={"$"}
-                              renderText={(value) => <>{value}</>}
+                              renderText={(value) => (
+                                   <span className="text-orange-700">
+                                        {value}
+                                   </span>
+                              )}
                               displayType={"text"}
                          />
                     </div>
@@ -42,4 +46,4 @@ const CartPreview = () => {
      );
 };
 
-export default CartPreview;
+export default CartTotal;

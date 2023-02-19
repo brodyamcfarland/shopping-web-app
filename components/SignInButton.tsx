@@ -1,5 +1,4 @@
 import { signIn } from "next-auth/react";
-import { motion } from "framer-motion";
 
 const SignInButton = () => {
      return (
