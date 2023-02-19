@@ -6,13 +6,14 @@ import {
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+import { RootState } from "../state/store";
 
-interface Props {
-     cartCount: number;
-}
-
-const SearchBar = ({ cartCount }: Props) => {
+const SearchBar = () => {
      const { data: session } = useSession();
+     const cartCount = useSelector(
+          (state: RootState) => state.cartCounter.value
+     );
      const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {};
 
      return (

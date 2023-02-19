@@ -13,14 +13,15 @@ import {
 } from "@heroicons/react/24/outline";
 import { useSession, signIn, signOut } from "next-auth/react";
 import CartPreview from "./CartPreview";
+import { useSelector } from "react-redux";
+import { RootState } from "../state/store";
 
-interface Props {
-     cartCount: number;
-}
-
-const Sidebar = ({ cartCount }: Props) => {
+const Sidebar = () => {
      const router = useRouter();
      const { data: session } = useSession();
+     const cartCount = useSelector(
+          (state: RootState) => state.cartCounter.value
+     );
 
      return (
           <header className="hidden md:flex flex-col w-[20rem] max-w-[20rem] border bg-[#171717] shadow-md border-gray-600">
@@ -77,7 +78,11 @@ const Sidebar = ({ cartCount }: Props) => {
                                    <span>Order History</span>
                               </Link>
                          )}
-                         <Link className="sidebarButtons" href="/" title="Cart">
+                         <Link
+                              className="sidebarButtons"
+                              href="/cart"
+                              title="Cart"
+                         >
                               <ShoppingCartIcon className="h-5 w-5" />
                               <p className="flex-1 text-left">Cart</p>
                               <span className="h-5 w-5 bg-red-700 rounded-full flex items-center justify-center text-xs border shadow-md">

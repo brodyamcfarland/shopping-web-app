@@ -2,13 +2,15 @@ import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { useSelector } from "react-redux";
 import type { RootState } from "../state/store";
 import CurrencyFormat from "react-currency-format";
+import Link from "next/link";
 
 const CartPreview = () => {
      const cartCount = useSelector(
           (state: RootState) => state.cartCounter.value
      );
      return (
-          <div
+          <Link
+               href={"/cart"}
                className="flex p-2 items-center border-t border-gray-600 hover:bg-white/5 duration-300 hover:cursor-pointer"
                title="Cart"
           >
@@ -36,7 +38,7 @@ const CartPreview = () => {
                          />
                     </div>
                </div>
-          </div>
+          </Link>
      );
 };
 
