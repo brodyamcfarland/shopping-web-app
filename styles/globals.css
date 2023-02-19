@@ -4,6 +4,6 @@
 
 @layer components {
      .sidebarButtons {
-          @apply gap-2 flex items-center rounded-md bg-[#252525] px-3 py-1 border border-transparent opacity-75 hover:opacity-100 hover:border-gray-500 duration-300 shadow-md;
+          @apply gap-2 w-full lex items-center rounded-md bg-[#252525] px-3 py-1 border border-transparent opacity-75 hover:opacity-100 hover:border-gray-500 duration-300 shadow-md;
      }
 }

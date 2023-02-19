@@ -162,7 +162,7 @@ const Sidebar = () => {
                                         onClick={() => signOut()}
                                    >
                                         <ArrowLeftOnRectangleIcon className="h-5 w-5" />
-                                        <span className="flex-1">Sign Out</span>
+                                        <span>Sign Out</span>
                                    </button>
                               </motion.div>
                          )}
