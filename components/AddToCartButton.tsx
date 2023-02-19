@@ -1,14 +1,13 @@
 import {
      MinusCircleIcon,
      PlusCircleIcon,
-     PlusIcon,
      ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { incrementByAmount, increment } from "../state/slices/cartSlice";
-import { useSelector, useDispatch } from "react-redux";
-import type { RootState } from "../state/store";
+import { useDispatch } from "react-redux";
+import { PlusIcon } from "@heroicons/react/24/solid";
 
 const AddToCartButton = () => {
      const [items, setItems] = useState<number>(1);
@@ -24,6 +23,7 @@ const AddToCartButton = () => {
 
      const addToCart = () => {
           dispatch(incrementByAmount(items));
+          setItems(1);
           toast.success(`${items} Item(s) Added to Cart!`);
      };
 
@@ -50,10 +50,11 @@ const AddToCartButton = () => {
                <button
                     title="Add To Cart"
                     onClick={addToCart}
-                    className="flex ml-auto mr-1 px-2 rounded-md text-sm border border-gray-600 bg-emerald-600/50 hover:bg-emerald-600/30 hover:shadow-inner duration-300"
+                    className="ml-auto mr-1 flex items-center justify-center p-0.5 overflow-hidden text-sm font-mediums text-gray-900 rounded-full group bg-gradient-to-br from-emerald-900 to-green-500 group-hover:from-emerald-600 group-hover:to-emerald-500 hover:text-white dark:text-white focus:outline-none focus:ring-green-300"
                >
-                    <ShoppingCartIcon className="h-6 w-6" />
-                    <PlusIcon className="h-4 w-4" />
+                    <span className="transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-full group-hover:bg-opacity-0">
+                         <PlusIcon className="h-5 w-5  shadow-md rounded-full" />
+                    </span>
                </button>
           </div>
      );

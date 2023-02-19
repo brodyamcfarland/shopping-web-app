@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import SearchBar from "./SearchBar";
 import Banner from "./Banner";
 import Footer from "./Footer";
+import { motion } from "framer-motion";
 
 interface Props {
      children: ReactNode;
@@ -11,11 +12,11 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
      return (
-          <div className="flex flex-col min-h-screen md:h-screen text-white text-center bg-black ">
+          <div className="flex flex-col min-h-screen md:h-screen text-white text-center bg-black">
                <div className="flex flex-col md:flex-row flex-1 ">
                     <MobileHeader />
                     <Sidebar />
-                    <main className="flex flex-col w-full h-screen ">
+                    <main className="flex relative flex-col w-full h-screen ">
                          <SearchBar />
                          <Banner />
                          {children}

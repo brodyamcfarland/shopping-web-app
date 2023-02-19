@@ -2,11 +2,19 @@ import Image from "next/image";
 import AddToCartButton from "./AddToCartButton";
 import { useRouter } from "next/router";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 
 const ProductCard = () => {
      const router = useRouter();
      return (
-          <div className="flex relative justify-start flex-col bg-[#171717] hover:bg-[#0e0e0e] border border-gray-600 rounded-lg w-[11rem] md:w-[13rem] h-[20rem] gap-2 opacity-90 hover:opacity-100 duration-300">
+          <motion.div
+               whileHover={{
+                    scale: 1.05,
+                    transition: { duration: 0.1 },
+               }}
+               whileTap={{ scale: 0.995 }}
+               className="flex relative justify-start flex-col bg-[#171717] hover:bg-[#0e0e0e] border border-gray-600 rounded-lg w-[11rem] md:w-[13rem] h-[20rem] gap-2 opacity-90 hover:opacity-100 duration-300"
+          >
                <Image
                     src="/SAMPLEBANNER.png"
                     height={100}
@@ -30,7 +38,7 @@ const ProductCard = () => {
                >
                     <EllipsisVerticalIcon className="h-6 w-6 hover:bg-white/5 rounded-full hover:cursor-pointer" />
                </div>
-          </div>
+          </motion.div>
      );
 };
 

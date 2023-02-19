@@ -15,6 +15,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import CartPreview from "./CartPreview";
 import { useSelector } from "react-redux";
 import { RootState } from "../state/store";
+import SignInButton from "./SignInButton";
 
 const Sidebar = () => {
      const router = useRouter();
@@ -132,15 +133,10 @@ const Sidebar = () => {
                          </div>
                     ) : (
                          <div
-                              className="flex h-20 gap-2 p-2 items-center justify-center hover:cursor-pointer border-t border-gray-600"
+                              className="flex h-20 p-2 items-center justify-center hover:cursor-pointer border-t border-gray-600"
                               title="Sign In"
                          >
-                              <button
-                                   onClick={() => signIn()}
-                                   className="border border-gray-600 px-8 py-2 rounded-lg bg-gradient-to-br from-blue-800/50 to-black/50 hover:to-blue-800 shadow-lg"
-                              >
-                                   Sign In
-                              </button>
+                              <SignInButton />
                          </div>
                     )}
 

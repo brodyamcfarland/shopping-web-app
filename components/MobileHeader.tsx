@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useSession, signIn, signOut } from "next-auth/react";
+import SignInButton from "./SignInButton";
 
 const MobileHeader = () => {
      const router = useRouter();
@@ -48,12 +49,7 @@ const MobileHeader = () => {
                          className="flex gap-2 p-2 items-center justify-center hover:cursor-pointer"
                          title="Sign In"
                     >
-                         <button
-                              onClick={() => signIn()}
-                              className="border border-gray-600 px-8 mx-auto py-2 rounded-lg bg-gradient-to-br from-blue-800/50 to-black/50 hover:to-blue-800/90 shadow-lg sm:mr-5 text-sm"
-                         >
-                              Sign In
-                         </button>
+                         <SignInButton />
                     </div>
                )}
           </div>

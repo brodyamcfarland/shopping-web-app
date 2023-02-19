@@ -16,6 +16,7 @@ const ProductCards = () => {
                     <ProductCard />
                     <ProductCard />
                     <ProductCard />
+                    <div className="h-[3rem]" />
                </div>
           </div>
      );
