@@ -37,7 +37,7 @@ const SearchBar = () => {
                     </button>
                </form>
                <div className="md:hidden px-2 flex gap-3 ml-auto items-center">
-                    <Link href="/" className="relative">
+                    <Link href="/cart" className="relative">
                          <ShoppingCartIcon className="h-7 w-7 hover:text-gray-400 duartion-300" />
                          <span className="absolute top-0 -right-1 h-4 w-4 bg-red-700 rounded-full flex items-center justify-center text-[10px] border shadow-md">
                               {cartCount}
@@ -45,10 +45,10 @@ const SearchBar = () => {
                     </Link>
                     {session && (
                          <>
-                              <Link href="/">
+                              <Link href="/orders">
                                    <NewspaperIcon className="h-7 w-7 hover:text-gray-400 duartion-300" />
                               </Link>
-                              <Link href="/">
+                              <Link href="/settings">
                                    <CogIcon className="h-7 w-7 hover:text-gray-400 duartion-300" />
                               </Link>
                          </>
