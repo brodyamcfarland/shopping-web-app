@@ -20,13 +20,13 @@ const Profile = () => {
                     height={100}
                     width={100}
                     alt="Logo"
-                    className="h-12 w-12 object-contain rounded-full"
+                    className="h-10 md:h-12 w-10 md:w-12 object-contain rounded-full"
                />
-               <div className="flex flex-col opacity-80 hover:opacity-100 w-[11.45rem]">
+               <div className="flex flex-col opacity-80 hover:opacity-100 w-[9rem] md:w-[11.45rem]">
                     <span className="text-white text-left font-semibold text-sm">
                          {session?.user?.name}
                     </span>
-                    <p className="text-gray-400 text-xs text-left truncate">
+                    <p className="text-gray-400 text-[8px] md:text-xs text-left truncate">
                          {session?.user?.email}
                     </p>
                </div>
