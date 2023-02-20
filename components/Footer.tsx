@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer = () => {
      return (
-          <footer className="flex bg-[#171717] h-7 w-full items-center justify-center text-[10px] text-gray-300 border-t border-gray-600 gap-4">
+          <footer className="flex bg-[#171717] h-7 w-full items-center justify-center text-[10px] text-gray-300 border-y border-gray-600 gap-4">
                <span className="text-gray-600 ">
                     &copy; 2023 Created By: Brody McFarland
                </span>

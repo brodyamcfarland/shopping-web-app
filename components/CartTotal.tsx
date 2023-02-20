@@ -35,7 +35,7 @@ const CartTotal = () => {
                               thousandSeparator={true}
                               prefix={"$"}
                               renderText={(value) => (
-                                   <span className="text-orange-700">
+                                   <span className="text-orange-500">
                                         {value}
                                    </span>
                               )}

@@ -31,9 +31,9 @@ const CartPreviewTag = () => {
                          alt="Item Image"
                          className="h-12 w-12 object-contain rounded-md"
                     />
-                    <div className="flex flex-col flex-1 text-sm w-[3rem]">
+                    <div className="flex flex-col flex-1 text-sm w-[3rem] flex-shrink">
                          <h3 className="truncate text-xs">Item Name</h3>
-                         <h4 className="text-orange-700">$50.00</h4>
+                         <h4 className="text-orange-500">$50.00</h4>
                     </div>
                     <div
                          className="flex items-center justify-center border border-gray-600 font-medium rounded-md bg-black"
@@ -65,7 +65,7 @@ const CartPreviewTag = () => {
                          thousandSeparator={true}
                          prefix={"$"}
                          renderText={(value) => (
-                              <span className="text-orange-700 pl-2">
+                              <span className="text-orange-500 pl-2">
                                    {value}
                               </span>
                          )}

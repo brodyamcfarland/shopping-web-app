@@ -31,7 +31,7 @@ const Sidebar = () => {
                initial={{ x: -200 }}
                animate={{ x: 0 }}
                transition={{ duration: 0.3, delay: 0 }}
-               className="hidden md:flex flex-col w-[20rem] max-w-[20rem] border bg-[#171717] shadow-md border-gray-600"
+               className="hidden md:flex flex-col min-w-[16rem] max-w-[20rem] border bg-[#171717] shadow-md border-gray-600"
           >
                <div className="flex flex-col h-full w-full">
                     <div
@@ -58,8 +58,11 @@ const Sidebar = () => {
                                    href="/"
                                    title="Home"
                               >
-                                   <HomeIcon className="h-5 w-5" />
-                                   <span>Home</span>
+                                   <HomeIcon
+                                        className="h-6 w-6"
+                                        strokeWidth={2}
+                                   />
+                                   <span className="">Home</span>
                               </Link>
                          </motion.div>
                          <motion.div
@@ -72,7 +75,10 @@ const Sidebar = () => {
                                    href="/cart"
                                    title="Cart"
                               >
-                                   <ShoppingCartIcon className="h-5 w-5" />
+                                   <ShoppingCartIcon
+                                        className="h-6 w-6"
+                                        strokeWidth={2}
+                                   />
                                    <p className="flex-1 text-left">Cart</p>
                                    <span className="h-5 w-5 bg-red-700 rounded-full flex items-center justify-center text-xs border shadow-md">
                                         {cartCount}
@@ -89,7 +95,10 @@ const Sidebar = () => {
                                    href="/categories"
                                    title="Categories"
                               >
-                                   <RectangleGroupIcon className="h-5 w-5" />
+                                   <RectangleGroupIcon
+                                        className="h-6 w-6"
+                                        strokeWidth={2}
+                                   />
                                    <span>Categories</span>
                               </Link>
                          </motion.div>
@@ -104,7 +113,10 @@ const Sidebar = () => {
                                    href="/sale"
                                    title="Deals"
                               >
-                                   <TagIcon className="h-5 w-5" />
+                                   <TagIcon
+                                        className="h-6 w-6"
+                                        strokeWidth={2}
+                                   />
                                    <span>Deals</span>
                               </Link>
                          </motion.div>
@@ -118,7 +130,10 @@ const Sidebar = () => {
                                    href="/about"
                                    title="About"
                               >
-                                   <InformationCircleIcon className="h-5 w-5" />
+                                   <InformationCircleIcon
+                                        className="h-6 w-6"
+                                        strokeWidth={2}
+                                   />
                                    <span>About</span>
                               </Link>
                          </motion.div>
@@ -131,11 +146,14 @@ const Sidebar = () => {
                               >
                                    <Link
                                         className="sidebarButtons"
-                                        href="/history"
-                                        title="Order History"
+                                        href="/orders"
+                                        title="Orders"
                                    >
-                                        <NewspaperIcon className="h-5 w-5" />
-                                        <span>Order History</span>
+                                        <NewspaperIcon
+                                             className="h-6 w-6"
+                                             strokeWidth={2}
+                                        />
+                                        <span>Orders</span>
                                    </Link>
                               </motion.div>
                          )}
@@ -150,7 +168,10 @@ const Sidebar = () => {
                                         href="/settings"
                                         title="Settings"
                                    >
-                                        <CogIcon className="h-5 w-5" />
+                                        <CogIcon
+                                             className="h-6 w-6"
+                                             strokeWidth={2}
+                                        />
                                         <span>Settings</span>
                                    </Link>
                               </motion.div>
@@ -165,7 +186,10 @@ const Sidebar = () => {
                                         className="sidebarButtons"
                                         onClick={() => signOut()}
                                    >
-                                        <ArrowLeftOnRectangleIcon className="h-5 w-5" />
+                                        <ArrowLeftOnRectangleIcon
+                                             className="h-6 w-6"
+                                             strokeWidth={2}
+                                        />
                                         <span>Sign Out</span>
                                    </button>
                               </motion.div>

@@ -11,7 +11,7 @@ const SearchBar = () => {
                     onSubmit={handleSearch}
                >
                     <input
-                         className="h-[26px] flex-1 rounded-tl-lg rounded-bl-lg shadow-inner focus:outline-none text-black pl-2 placeholder:italic py-[1px]"
+                         className="h-[26px] focus:border-2 border-purple-700 bg-black flex-1 rounded-tl-lg rounded-bl-lg shadow-inner focus:outline-none pl-2 placeholder:italic py-[1px]"
                          type="text"
                          placeholder="Search"
                     />

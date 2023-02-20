@@ -22,9 +22,9 @@ const CartSidebar = () => {
                     duration: 0.05,
                     default: { ease: "linear" },
                }}
-               className="hidden md:flex flex-col w-[20rem] max-w-[20rem] border bg-[#171717] shadow-md border-gray-600"
+               className="hidden md:flex flex-col w-[16rem] max-w-[20rem] border bg-[#171717] shadow-md border-gray-600"
           >
-               <div className="flex flex-col h-full w-full">
+               <div className="flex flex-col h-full">
                     <div
                          onClick={() => router.push("/")}
                          className="flex items-center justify-center gap-2 border-b border-gray-600 hover:cursor-pointer opacity-80 hover:opacity-100 duration-300"

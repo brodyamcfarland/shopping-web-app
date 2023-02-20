@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Banner = () => {
      return (
-          <div className="hidden md:inline-block border-gray-600">
+          <div className="hidden md:inline-block">
                <div className="border-b shadow-lg border-gray-600">
                     <Image
                          src="/SAMPLEBANNER.png"
