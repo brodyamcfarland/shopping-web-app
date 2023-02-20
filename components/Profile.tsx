@@ -11,7 +11,7 @@ const Profile = () => {
                initial={{ opacity: 0 }}
                animate={{ opacity: 1 }}
                transition={{ duration: 0.8, delay: 0.8 }}
-               className="flex h-20 gap-2 p-2 items-center hover:cursor-pointer border-t border-gray-600 hover:bg-white/5 hover:underline"
+               className="flex h-20 gap-2 p-2 items-center hover:cursor-pointer hover:bg-white/5 hover:underline"
                title="Settings"
                onClick={() => router.push("/settings")}
           >

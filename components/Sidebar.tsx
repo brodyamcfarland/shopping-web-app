@@ -172,7 +172,9 @@ const Sidebar = () => {
                          )}
                     </div>
                     {session ? (
-                         <Profile />
+                         <div className="border-t border-gray-600">
+                              <Profile />
+                         </div>
                     ) : (
                          <motion.div
                               initial={{ opacity: 0 }}

@@ -1,25 +1,13 @@
-import {
-     CogIcon,
-     NewspaperIcon,
-     ShoppingCartIcon,
-} from "@heroicons/react/24/outline";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
-import { useSession } from "next-auth/react";
-import Link from "next/link";
-import { useSelector } from "react-redux";
-import { RootState } from "../state/store";
+import MobileButtons from "./MobileButtons";
 
 const SearchBar = () => {
-     const { data: session } = useSession();
-     const cartCount = useSelector(
-          (state: RootState) => state.cartCounter.value
-     );
      const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {};
 
      return (
           <div className="flex h-10 items-center pl-2 py-2 md:pl-0 md:justify-center bg-[#171717] text-white shadow-xl border-b border-gray-600">
                <form
-                    className="flex mx-1 w-full md:w-[25rem] lg:w-[30rem] divide-x-[1px] divide-gray-600 rounded-lg shadow-lg "
+                    className="flex mx-1 w-[15rem] md:w-[25rem] lg:w-[30rem] divide-x-[1px] divide-gray-600 rounded-lg shadow-lg "
                     onSubmit={handleSearch}
                >
                     <input
@@ -36,24 +24,7 @@ const SearchBar = () => {
                          </span>
                     </button>
                </form>
-               <div className="md:hidden px-2 flex gap-3 ml-auto items-center">
-                    <Link href="/cart" className="relative">
-                         <ShoppingCartIcon className="h-7 w-7 hover:text-gray-400 duartion-300" />
-                         <span className="absolute top-0 -right-1 h-4 w-4 bg-red-700 rounded-full flex items-center justify-center text-[10px] border shadow-md">
-                              {cartCount}
-                         </span>
-                    </Link>
-                    {session && (
-                         <>
-                              <Link href="/orders">
-                                   <NewspaperIcon className="h-7 w-7 hover:text-gray-400 duartion-300" />
-                              </Link>
-                              <Link href="/settings">
-                                   <CogIcon className="h-7 w-7 hover:text-gray-400 duartion-300" />
-                              </Link>
-                         </>
-                    )}
-               </div>
+               <MobileButtons />
           </div>
      );
 };
