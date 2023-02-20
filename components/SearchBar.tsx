@@ -28,7 +28,7 @@ const SearchBar = () => {
                          placeholder="Search"
                     />
                     <button
-                         className="h-[26px] w-[3rem] flex items-center justify-center p-0.5 overflow-hidden text-sm rounded-tr-lg rounded-br-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 "
+                         className="h-[26px] w-[3rem] flex items-center justify-center p-0.5 overflow-hidden text-sm rounded-tr-lg rounded-br-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:outline-none"
                          title="Search"
                     >
                          <span className="flex justify-center items-center h-full w-full transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-tr-lg rounded-br-lg group-hover:bg-opacity-0">

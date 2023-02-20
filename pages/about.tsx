@@ -1,20 +1,19 @@
-import Head from "next/head";
+import React from "react";
 import Layout from "../components/Layout";
+import Head from "next/head";
 
-const Cart = () => {
+const About = () => {
      return (
           <Layout>
                <Head>
-                    <title>Shopping: Cart</title>
+                    <title>Shopping: About</title>
                     <link rel="icon" href="/favicon.ico" />
                </Head>
                <div className="flex-1">
-                    <div className="border">
-                         <h2>My Cart</h2>
-                    </div>
+                    <h2>About</h2>
                </div>
           </Layout>
      );
 };
 
-export default Cart;
+export default About;

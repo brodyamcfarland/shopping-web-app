@@ -9,18 +9,17 @@ const ProductCard = () => {
      return (
           <motion.div
                whileHover={{
-                    scale: 1.05,
-                    transition: { duration: 0.1 },
+                    scale: 1.02,
                }}
-               whileTap={{ scale: 0.995 }}
-               className="flex relative justify-start flex-col bg-[#171717] hover:bg-[#0e0e0e] border border-gray-600 rounded-lg w-[11rem] md:w-[13rem] h-[20rem] gap-2 opacity-90 hover:opacity-100 duration-300"
+               whileTap={{ scale: 1 }}
+               className="flex select-none relative justify-start flex-col bg-[#171717] hover:bg-[#0e0e0e] border border-gray-600 rounded-lg w-[11rem] md:w-[13rem] h-[20rem] gap-2 opacity-90 hover:opacity-100 duration-300"
           >
                <Image
                     src="/SAMPLEBANNER.png"
                     height={100}
                     width={300}
                     alt="Logo"
-                    className="w-full h-2/5 rounded-tr-lg rounded-tl-lg border-b border-gray-600  object-cover hover:cursor-pointer"
+                    className="w-full h-2/5 rounded-tr-lg rounded-tl-lg border-b border-gray-600  object-cover hover:cursor-pointer hover:brightness-125 duration-300"
                     onClick={() => router.push("/shop")}
                />
                <h3 className="text-sm">Item Name</h3>

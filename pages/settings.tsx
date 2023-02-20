@@ -1,20 +1,18 @@
 import Head from "next/head";
 import Layout from "../components/Layout";
 
-const Cart = () => {
+const Settings = () => {
      return (
           <Layout>
                <Head>
-                    <title>Shopping: Cart</title>
+                    <title>Shopping: Settings</title>
                     <link rel="icon" href="/favicon.ico" />
                </Head>
                <div className="flex-1">
-                    <div className="border">
-                         <h2>My Cart</h2>
-                    </div>
+                    <h2>Settings</h2>
                </div>
           </Layout>
      );
 };
 
-export default Cart;
+export default Settings;

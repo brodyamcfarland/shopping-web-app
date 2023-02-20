@@ -50,10 +50,10 @@ const AddToCartButton = () => {
                <button
                     title="Add To Cart"
                     onClick={addToCart}
-                    className="ml-auto mr-1 flex items-center justify-center p-0.5 overflow-hidden text-sm font-mediums text-gray-900 rounded-full group bg-gradient-to-br from-emerald-900 to-green-500 group-hover:from-emerald-600 group-hover:to-emerald-500 hover:text-white dark:text-white focus:outline-none focus:ring-green-300"
+                    className="ml-auto mr-1 flex items-center justify-center p-0.5 overflow-hidden text-sm font-mediums text-gray-900 rounded-full group bg-gradient-to-br from-emerald-900 to-green-400 group-hover:from-emerald-600 group-hover:to-emerald-500 hover:text-white dark:text-white focus:outline-none focus:ring-green-300"
                >
                     <span className="transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-full group-hover:bg-opacity-0">
-                         <PlusIcon className="h-5 w-5  shadow-md rounded-full" />
+                         <PlusIcon className="h-5 w-5 shadow-md rounded-full" />
                     </span>
                </button>
           </div>

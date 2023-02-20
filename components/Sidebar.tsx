@@ -5,6 +5,7 @@ import {
      ArrowLeftOnRectangleIcon,
      CogIcon,
      HomeIcon,
+     InformationCircleIcon,
      NewspaperIcon,
      RectangleGroupIcon,
      ShoppingCartIcon,
@@ -67,11 +68,14 @@ const Sidebar = () => {
                          >
                               <Link
                                    className="sidebarButtons"
-                                   href="/categories"
-                                   title="Categories"
+                                   href="/cart"
+                                   title="Cart"
                               >
-                                   <RectangleGroupIcon className="h-5 w-5" />
-                                   <span>Categories</span>
+                                   <ShoppingCartIcon className="h-5 w-5" />
+                                   <p className="flex-1 text-left">Cart</p>
+                                   <span className="h-5 w-5 bg-red-700 rounded-full flex items-center justify-center text-xs border shadow-md">
+                                        {cartCount}
+                                   </span>
                               </Link>
                          </motion.div>
                          <motion.div
@@ -81,13 +85,14 @@ const Sidebar = () => {
                          >
                               <Link
                                    className="sidebarButtons"
-                                   href="/"
-                                   title="New Arrivals"
+                                   href="/categories"
+                                   title="Categories"
                               >
-                                   <StarIcon className="h-5 w-5" />
-                                   <span>New Arrivals</span>
+                                   <RectangleGroupIcon className="h-5 w-5" />
+                                   <span>Categories</span>
                               </Link>
                          </motion.div>
+
                          <motion.div
                               initial={{ opacity: 0, x: -200 }}
                               animate={{ opacity: 1, x: 0 }}
@@ -95,18 +100,33 @@ const Sidebar = () => {
                          >
                               <Link
                                    className="sidebarButtons"
-                                   href="/"
+                                   href="/sale"
                                    title="Deals"
                               >
                                    <TagIcon className="h-5 w-5" />
                                    <span>Deals</span>
                               </Link>
                          </motion.div>
+                         <motion.div
+                              initial={{ opacity: 0, x: -200 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ duration: 0.5, delay: 0.4 }}
+                         >
+                              <Link
+                                   className="sidebarButtons"
+                                   href="/about"
+                                   title="About"
+                              >
+                                   <InformationCircleIcon className="h-5 w-5" />
+                                   <span>About</span>
+                              </Link>
+                         </motion.div>
+
                          {session && (
                               <motion.div
                                    initial={{ opacity: 0, x: -200 }}
                                    animate={{ opacity: 1, x: 0 }}
-                                   transition={{ duration: 0.5, delay: 0.35 }}
+                                   transition={{ duration: 0.5, delay: 0.5 }}
                               >
                                    <Link
                                         className="sidebarButtons"
@@ -118,28 +138,11 @@ const Sidebar = () => {
                                    </Link>
                               </motion.div>
                          )}
-                         <motion.div
-                              initial={{ opacity: 0, x: -200 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ duration: 0.5, delay: 0.4 }}
-                         >
-                              <Link
-                                   className="sidebarButtons"
-                                   href="/cart"
-                                   title="Cart"
-                              >
-                                   <ShoppingCartIcon className="h-5 w-5" />
-                                   <p className="flex-1 text-left">Cart</p>
-                                   <span className="pb-[2px] h-5 w-5 bg-red-700 rounded-full flex items-center justify-center text-xs border shadow-md">
-                                        {cartCount}
-                                   </span>
-                              </Link>
-                         </motion.div>
                          {session && (
                               <motion.div
                                    initial={{ opacity: 0, x: -200 }}
                                    animate={{ opacity: 1, x: 0 }}
-                                   transition={{ duration: 0.5, delay: 0.45 }}
+                                   transition={{ duration: 0.5, delay: 0.6 }}
                               >
                                    <Link
                                         className="sidebarButtons"
@@ -155,7 +158,7 @@ const Sidebar = () => {
                               <motion.div
                                    initial={{ opacity: 0, x: -200 }}
                                    animate={{ opacity: 1, x: 0 }}
-                                   transition={{ duration: 0.5, delay: 0.5 }}
+                                   transition={{ duration: 0.5, delay: 0.7 }}
                               >
                                    <button
                                         className="sidebarButtons"
@@ -171,6 +174,7 @@ const Sidebar = () => {
                          <div
                               className="flex h-20 gap-2 p-2 items-center hover:cursor-pointer border-t border-gray-600 hover:bg-white/5 hover:underline"
                               title="Settings"
+                              onClick={() => router.push("/settings")}
                          >
                               <Image
                                    src={`${session?.user?.image}`}
