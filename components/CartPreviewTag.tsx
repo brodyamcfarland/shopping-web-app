@@ -45,7 +45,7 @@ const CartPreviewTag = () => {
                          >
                               +
                          </button>
-                         <span className="text-center w-5 text-sm px-1">
+                         <span className="text-center w-6 text-sm px-1">
                               {cartCount}
                          </span>
                          <button

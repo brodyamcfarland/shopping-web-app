@@ -12,11 +12,12 @@ import {
      StarIcon,
      TagIcon,
 } from "@heroicons/react/24/outline";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import { useSelector } from "react-redux";
 import { RootState } from "../state/store";
 import SignInButton from "./SignInButton";
 import { motion } from "framer-motion";
+import Profile from "./Profile";
 
 const Sidebar = () => {
      const router = useRouter();
@@ -171,27 +172,7 @@ const Sidebar = () => {
                          )}
                     </div>
                     {session ? (
-                         <div
-                              className="flex h-20 gap-2 p-2 items-center hover:cursor-pointer border-t border-gray-600 hover:bg-white/5 hover:underline"
-                              title="Settings"
-                              onClick={() => router.push("/settings")}
-                         >
-                              <Image
-                                   src={`${session?.user?.image}`}
-                                   height={100}
-                                   width={100}
-                                   alt="Logo"
-                                   className="h-12 w-12 object-contain rounded-full"
-                              />
-                              <div className="flex flex-col opacity-80 hover:opacity-100 w-[11.45rem]">
-                                   <span className="text-white text-left font-semibold text-sm">
-                                        {session?.user?.name}
-                                   </span>
-                                   <p className="text-gray-400 text-xs text-left truncate">
-                                        {session?.user?.email}
-                                   </p>
-                              </div>
-                         </div>
+                         <Profile />
                     ) : (
                          <motion.div
                               initial={{ opacity: 0 }}

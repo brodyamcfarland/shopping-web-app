@@ -9,12 +9,20 @@ const initialState: CounterState = {
      value: 0,
 };
 
+const maxQuantity = 99;
+
 export const cartSlice = createSlice({
      name: "cartCounter",
      initialState,
      reducers: {
           increment: (state) => {
-               state.value += 1;
+               if (state.value <= 99) {
+                    if (state.value === 99) {
+                         return;
+                    } else {
+                         state.value += 1;
+                    }
+               }
           },
           decrement: (state) => {
                if (state.value === 0) {
@@ -24,7 +32,11 @@ export const cartSlice = createSlice({
                }
           },
           incrementByAmount: (state, action: PayloadAction<number>) => {
-               state.value += action.payload;
+               if (state.value + action.payload > 99) {
+                    return;
+               } else {
+                    state.value += action.payload;
+               }
           },
      },
 });

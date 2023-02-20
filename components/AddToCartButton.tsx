@@ -1,16 +1,16 @@
-import {
-     MinusCircleIcon,
-     PlusCircleIcon,
-     ShoppingCartIcon,
-} from "@heroicons/react/24/outline";
+import { MinusCircleIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { incrementByAmount, increment } from "../state/slices/cartSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { PlusIcon } from "@heroicons/react/24/solid";
+import { RootState } from "../state/store";
 
 const AddToCartButton = () => {
      const [items, setItems] = useState<number>(1);
+     const cartCount = useSelector(
+          (state: RootState) => state.cartCounter.value
+     );
      const dispatch = useDispatch();
 
      const decrement = () => {
@@ -24,7 +24,13 @@ const AddToCartButton = () => {
      const addToCart = () => {
           dispatch(incrementByAmount(items));
           setItems(1);
-          toast.success(`${items} Item(s) Added to Cart!`);
+          if (cartCount + items >= 100) {
+               toast.error(
+                    "The Quantity Limit has been reached (100). Please lower your quantity amount."
+               );
+          } else {
+               toast.success(`${items} Item(s) Added to Cart!`);
+          }
      };
 
      return (
