@@ -67,11 +67,11 @@ const Sidebar = () => {
                          >
                               <Link
                                    className="sidebarButtons"
-                                   href="/"
+                                   href="/categories"
                                    title="Categories"
                               >
                                    <RectangleGroupIcon className="h-5 w-5" />
-                                   <span>Catgories</span>
+                                   <span>Categories</span>
                               </Link>
                          </motion.div>
                          <motion.div
