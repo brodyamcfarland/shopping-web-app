@@ -12,7 +12,7 @@ const ProductCard = () => {
                     scale: 1.02,
                }}
                whileTap={{ scale: 1 }}
-               className="flex select-none relative justify-start flex-col bg-[#171717] hover:bg-[#0e0e0e] border border-gray-600 rounded-lg w-[11rem] md:w-[13rem] h-[20rem] gap-2 opacity-90 hover:opacity-100 duration-300"
+               className="flex pb-1 select-none relative justify-start flex-col bg-[#171717] hover:bg-[#0e0e0e] border border-gray-600 rounded-lg w-[11rem] md:w-[13rem] h-[20rem] gap-2 opacity-90 hover:opacity-100 duration-300"
           >
                <Image
                     src="/SAMPLEBANNER.png"

@@ -9,7 +9,7 @@ const MobileHeader = () => {
      const { data: session } = useSession();
 
      return (
-          <div className="flex bg-[#171717] md:hidden shadow-md border-b border-gray-600">
+          <div className="flex bg-[#171717] md:hidden shadow-md border-b border-gray-600 h-fit">
                <div
                     onClick={() => router.push("/")}
                     className="flex flex-1 items-center hover:cursor-pointer opacity-80 hover:opacity-100 duration-300"
@@ -20,14 +20,14 @@ const MobileHeader = () => {
                          width={210}
                          alt="Logo"
                          title="Home"
-                         className="h-full w-fit object-contain"
+                         className="h-full w-full object-contain"
                     />
                </div>
                {session ? (
                     <Profile />
                ) : (
                     <div
-                         className="flex gap-2 p-2 items-center justify-center hover:cursor-pointer"
+                         className="flex w-1/2 gap-2 p-2 items-center justify-end hover:cursor-pointer"
                          title="Sign In"
                     >
                          <SignInButton />

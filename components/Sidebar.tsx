@@ -131,7 +131,7 @@ const Sidebar = () => {
                               >
                                    <Link
                                         className="sidebarButtons"
-                                        href="/"
+                                        href="/history"
                                         title="Order History"
                                    >
                                         <NewspaperIcon className="h-5 w-5" />
@@ -147,7 +147,7 @@ const Sidebar = () => {
                               >
                                    <Link
                                         className="sidebarButtons"
-                                        href="/"
+                                        href="/settings"
                                         title="Settings"
                                    >
                                         <CogIcon className="h-5 w-5" />
