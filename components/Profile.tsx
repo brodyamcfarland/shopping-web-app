@@ -11,7 +11,7 @@ const Profile = () => {
                initial={{ opacity: 0 }}
                animate={{ opacity: 1 }}
                transition={{ duration: 0.8, delay: 0.8 }}
-               className="flex ml-auto md:ml-1 h-fit  gap-2 p-2 items-center hover:cursor-pointer hover:bg-white/5 hover:underline"
+               className="flex ml-auto md:mx-1 h-fit  gap-2 p-2 items-center hover:cursor-pointer hover:bg-white/5 hover:underline"
                title="Settings"
                onClick={() => router.push("/settings")}
           >

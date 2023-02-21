@@ -12,7 +12,7 @@ const MobileHeader = () => {
           <div className="flex bg-[#171717] md:hidden shadow-md h-fit">
                <div
                     onClick={() => router.push("/")}
-                    className="flex flex-1 items-center hover:cursor-pointer opacity-80 hover:opacity-100 duration-300"
+                    className="flex flex-1 items-center max-w-1/2 hover:cursor-pointer opacity-80 hover:opacity-100 duration-300"
                >
                     <Image
                          src="/SAMPLEBANNER.png"
