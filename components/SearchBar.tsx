@@ -5,9 +5,9 @@ const SearchBar = () => {
      const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {};
 
      return (
-          <div className="flex h-10 items-center pl-2 py-2 md:pl-0 md:justify-center bg-[#171717] text-white shadow-xl border-b border-gray-600">
+          <div className="flex h-10 items-center py-2 md:pl-0 md:justify-center bg-[#171717] text-white shadow-xl border-y border-gray-600">
                <form
-                    className="flex mx-1 w-[15rem] md:w-[25rem] lg:w-[30rem] divide-x-[1px] divide-gray-600 rounded-lg shadow-lg "
+                    className="flex mx-1 w-fit md:max-w-[25rem] lg:w-[30rem] divide-x-[1px] divide-gray-600 rounded-lg shadow-lg "
                     onSubmit={handleSearch}
                >
                     <input
