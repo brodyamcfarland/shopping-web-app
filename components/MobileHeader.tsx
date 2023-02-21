@@ -9,7 +9,7 @@ const MobileHeader = () => {
      const { data: session } = useSession();
 
      return (
-          <div className="flex bg-[#171717] md:hidden shadow-md border-b border-gray-600 h-fit">
+          <div className="flex bg-[#171717] md:hidden shadow-md h-fit">
                <div
                     onClick={() => router.push("/")}
                     className="flex flex-1 items-center hover:cursor-pointer opacity-80 hover:opacity-100 duration-300"

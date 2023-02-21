@@ -196,7 +196,7 @@ const Sidebar = () => {
                          )}
                     </div>
                     {session ? (
-                         <div className="border-t border-gray-600">
+                         <div className="border-t border-gray-600 h-20 flex items-center pl-1">
                               <Profile />
                          </div>
                     ) : (
