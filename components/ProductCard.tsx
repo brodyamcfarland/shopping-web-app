@@ -30,7 +30,7 @@ const ProductCard = () => {
                     labore impedit asperio.
                </p>
                <div className="flex w-fit m-auto">
-                    <span className="text-[11px] font-semibold text-gray-500 pr-[3px]">
+                    <span className="text-[11px] font-bold text-gray-500 pr-[3px] pt-2">
                          $
                     </span>
                     <p className="flex-1 text-orange-500 font-bold pr-2 text-lg py-1">
