@@ -39,7 +39,7 @@ const Sidebar = () => {
                          className="flex items-center gap-2 hover:cursor-pointer opacity-80 hover:opacity-100 duration-300"
                     >
                          <Image
-                              src="/SAMPLEBANNER.png"
+                              src="/GET_MEDIUM_BANNER.png"
                               height={100}
                               width={300}
                               alt="Logo"

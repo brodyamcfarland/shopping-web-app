@@ -1,6 +1,6 @@
 import {
-     CogIcon,
      NewspaperIcon,
+     RectangleGroupIcon,
      ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 import { useSession } from "next-auth/react";
@@ -27,8 +27,8 @@ const MobileButtons = () => {
                          <Link href="/orders">
                               <NewspaperIcon className="h-7 w-7 hover:text-gray-400 duartion-300" />
                          </Link>
-                         <Link href="/settings">
-                              <CogIcon className="h-7 w-7 hover:text-gray-400 duartion-300" />
+                         <Link href="/categories">
+                              <RectangleGroupIcon className="h-7 w-7 hover:text-gray-400 duartion-300" />
                          </Link>
                     </>
                )}

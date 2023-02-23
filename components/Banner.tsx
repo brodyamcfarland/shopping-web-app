@@ -5,12 +5,13 @@ const Banner = () => {
           <div className="hidden md:inline-block">
                <div className="border-b shadow-lg border-gray-600">
                     <Image
-                         src="/SAMPLEBANNER.png"
+                         src="/GET_LONG_BANNER.png"
                          height={100}
                          width={300}
                          alt="Logo"
                          title="Home"
-                         className="w-full max-h-[6.5rem] rotate-180 object-cover"
+                         className="object-contain w-full"
+                         unoptimized
                     />
                </div>
           </div>
