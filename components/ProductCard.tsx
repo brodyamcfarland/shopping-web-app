@@ -15,10 +15,10 @@ const ProductCard = () => {
                className="flex select-none relative justify-start flex-col bg-[#171717] hover:bg-[#0e0e0e] border border-gray-600 rounded-lg w-[11rem] md:w-[13rem] lg:w-[14rem] xl:w-[15rem] h-[22rem] gap-2 opacity-90 hover:opacity-100 duration-300"
           >
                <Image
-                    src="/SAMPLEBANNER.png"
+                    src="/SAMPLE_BANNER.png"
                     height={100}
                     width={300}
-                    alt="Logo"
+                    alt="Sample Image"
                     className="w-full h-2/5 rounded-tr-lg rounded-tl-lg border-b border-gray-600  object-cover hover:cursor-pointer hover:brightness-125 duration-300"
                     onClick={() => router.push("/shop")}
                />

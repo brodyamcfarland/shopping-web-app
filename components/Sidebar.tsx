@@ -42,9 +42,9 @@ const Sidebar = () => {
                               src="/GET_MEDIUM_BANNER.png"
                               height={100}
                               width={300}
-                              alt="Logo"
+                              alt="Get Logo"
                               title="Home"
-                              className="w-full max-h-[4.5rem]  object-cover"
+                              className="w-full max-h-[4.5rem] object-cover"
                          />
                     </div>
                     <div className="flex flex-1 flex-col p-2 gap-2 border-t  border-gray-600 overflow-y-auto">
