@@ -25,7 +25,7 @@ const CartPreviewTag = () => {
           <div className="flex flex-col">
                <div className="flex items-center text-left gap-2 p-2 border-b border-gray-600 bg-[#252525]">
                     <Image
-                         src={"/SAMPLE_SQUARE.png"}
+                         src={"/SAMPLE_BANNER.png"}
                          height={100}
                          width={100}
                          alt="Item Image"
