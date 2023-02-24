@@ -9,7 +9,7 @@ import { RootState } from "../state/store";
 const AddToCartButton = () => {
      const [items, setItems] = useState<number>(1);
      const cartCount = useSelector(
-          (state: RootState) => state.cartCounter.value
+          (state: RootState) => state.cartCounter.items.length
      );
      const dispatch = useDispatch();
 

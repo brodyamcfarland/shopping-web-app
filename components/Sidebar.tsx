@@ -23,7 +23,7 @@ const Sidebar = () => {
      const router = useRouter();
      const { data: session } = useSession();
      const cartCount = useSelector(
-          (state: RootState) => state.cartCounter.value
+          (state: RootState) => state.cartCounter.items.length
      );
 
      return (
@@ -205,7 +205,6 @@ const Sidebar = () => {
                               animate={{ opacity: 1 }}
                               transition={{ duration: 0.8, delay: 0.8 }}
                               className="flex h-20 p-2 items-center justify-center hover:cursor-pointer border-t border-gray-600"
-                              title="Sign In"
                          >
                               <SignInButton />
                          </motion.div>

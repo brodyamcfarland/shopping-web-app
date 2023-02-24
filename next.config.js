@@ -7,6 +7,7 @@ module.exports = {
                "googleusercontent.com",
                "avatars.githubusercontent.com",
                "githubusercontent.com",
+               "fakestoreapi.com",
           ],
      },
 };

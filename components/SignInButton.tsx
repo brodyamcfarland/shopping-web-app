@@ -3,6 +3,7 @@ import { signIn } from "next-auth/react";
 const SignInButton = () => {
      return (
           <button
+               title="Sign In"
                onClick={() => signIn()}
                className="inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-mediums text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:outline-none"
           >

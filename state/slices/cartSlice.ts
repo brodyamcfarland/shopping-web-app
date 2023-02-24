@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-
-export interface CounterState {
-     value: number;
+import { Items } from "../../types";
+interface CounterState {
+     items: Items[];
 }
 
 const initialState: CounterState = {
-     value: 0,
+     items: [],
 };
 
 const maxQuantity = 99;
@@ -16,28 +16,68 @@ export const cartSlice = createSlice({
      initialState,
      reducers: {
           increment: (state) => {
-               if (state.value <= 99) {
-                    if (state.value === 99) {
+               if (state.items.length <= maxQuantity) {
+                    if (state.items.length === maxQuantity) {
                          return;
                     } else {
-                         state.value += 1;
+                         state.items.length += 1;
                     }
                }
           },
           decrement: (state) => {
-               if (state.value === 0) {
+               if (state.items.length === 0) {
                     return;
                } else {
-                    state.value -= 1;
+                    state.items.length -= 1;
                }
           },
           incrementByAmount: (state, action: PayloadAction<number>) => {
-               if (state.value + action.payload > 99) {
+               if (state.items.length + action.payload > maxQuantity) {
                     return;
                } else {
-                    state.value += action.payload;
+                    state.items.length += action.payload;
                }
           },
+          addToBasket: (state, action: PayloadAction<Items>) => {
+               if (state.items.length <= maxQuantity) {
+                    if (state.items.length === maxQuantity) {
+                         console.log(
+                              "Cannot Add to Basket -- Max Quanitity Reached"
+                         );
+                         return;
+                    } else {
+                         state.items = [...state.items, action.payload];
+                    }
+               }
+          }, //ready to test
+          addToBasketByAmount: (state, action: PayloadAction<Items>) => {
+               let newArray = [...state.items, action.payload];
+               if (newArray.length >= maxQuantity) {
+                    console.log(
+                         "Cannot Add to Basket -- Max Quanitity Reached"
+                    );
+                    return;
+               } else {
+                    state.items = [...state.items, action.payload];
+               }
+          }, // ready to test
+          removeFromBasket: (state, action: PayloadAction<any>) => {
+               const index = state.items.findIndex(
+                    (cartItem) => cartItem.id === action.payload.id
+               );
+
+               let newCart = [...state.items];
+
+               if (index >= 0) {
+                    newCart.splice(index, 1);
+               } else {
+                    console.warn(
+                         `Cannot Remove Product (id: ${action.payload.id}) as its not in the cart`
+                    );
+               }
+
+               state.items = newCart;
+          }, // I think ready to test
      },
 });
 

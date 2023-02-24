@@ -11,7 +11,7 @@ const CartSidebar = () => {
      const router = useRouter();
      const { data: session } = useSession();
      const cartCount = useSelector(
-          (state: RootState) => state.cartCounter.value
+          (state: RootState) => state.cartCounter.items.length
      );
 
      return (

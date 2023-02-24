@@ -12,7 +12,7 @@ import { RootState } from "../state/store";
 const MobileButtons = () => {
      const { data: session } = useSession();
      const cartCount = useSelector(
-          (state: RootState) => state.cartCounter.value
+          (state: RootState) => state.cartCounter.items.length
      );
      return (
           <div className="md:hidden flex gap-3 mx-auto justify-center items-center">

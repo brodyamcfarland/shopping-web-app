@@ -1,12 +1,12 @@
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { useSelector } from "react-redux";
 import type { RootState } from "../state/store";
-import CurrencyFormat from "react-currency-format";
+import Currency from "react-currency-formatter";
 import Link from "next/link";
 
 const CartTotal = () => {
      const cartCount = useSelector(
-          (state: RootState) => state.cartCounter.value
+          (state: RootState) => state.cartCounter.items.length
      );
 
      return (
@@ -30,17 +30,9 @@ const CartTotal = () => {
 
                     <div className="flex text-right">
                          <p className="text-gray-400 w-10 pr-2">Total:</p>
-                         <CurrencyFormat
-                              value={cartCount * 50}
-                              thousandSeparator={true}
-                              prefix={"$"}
-                              renderText={(value) => (
-                                   <span className="text-orange-500">
-                                        {value}
-                                   </span>
-                              )}
-                              displayType={"text"}
-                         />
+                         <span className="text-orange-500">
+                              <Currency quantity={cartCount * 50} />
+                         </span>
                     </div>
                </div>
           </Link>

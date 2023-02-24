@@ -3,8 +3,25 @@ import AddToCartButton from "./AddToCartButton";
 import { useRouter } from "next/router";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import Currency from "react-currency-formatter";
 
-const ProductCard = () => {
+interface Props {
+     id: number;
+     title: string;
+     price: number;
+     description: string;
+     category: string;
+     image: string;
+}
+
+const ProductCard = ({
+     id,
+     title,
+     price,
+     description,
+     category,
+     image,
+}: Props) => {
      const router = useRouter();
      return (
           <motion.div
@@ -15,27 +32,19 @@ const ProductCard = () => {
                className="flex select-none relative justify-start flex-col bg-[#171717] hover:bg-[#0e0e0e] border border-gray-600 rounded-lg w-[11rem] md:w-[13rem] lg:w-[14rem] xl:w-[15rem] h-[22rem] gap-2 opacity-90 hover:opacity-100 duration-300"
           >
                <Image
-                    src="/SAMPLE_BANNER.png"
+                    src={image}
                     height={100}
                     width={300}
-                    alt="Sample Image"
-                    className="w-full h-2/5 rounded-tr-lg rounded-tl-lg border-b border-gray-600  object-cover hover:cursor-pointer hover:brightness-125 duration-300"
+                    alt=""
+                    className="w-full h-2/5 rounded-tr-lg rounded-tl-lg border-b border-gray-600 bg-white object-contain hover:cursor-pointer hover:brightness-125 duration-300"
                     onClick={() => router.push("/shop")}
                />
-               <h3 className="text-sm">Item Name</h3>
+               <h3 className="text-sm px-1 font-semibold">{title}</h3>
                <p className="text-xs text-gray-400 text-left px-2 line-clamp-4">
-                    Description. Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Fugit, ea, fuga necessitatibus dolores hic
-                    ipsam numquam quia dolorum cum, sed autem. Porro est neque
-                    labore impedit asperio.
+                    {description}
                </p>
-               <div className="flex w-fit m-auto">
-                    <span className="text-[11px] font-bold text-gray-500 pr-[3px] pt-2">
-                         $
-                    </span>
-                    <p className="flex-1 text-orange-500 font-bold pr-2 text-lg py-1">
-                         50.00
-                    </p>
+               <div className="flex w-fit m-auto text-orange-500 pr-1">
+                    <Currency quantity={price} />
                </div>
 
                <AddToCartButton />

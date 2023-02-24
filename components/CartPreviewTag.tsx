@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { decrement, increment } from "../state/slices/cartSlice";
 import { RootState } from "../state/store";
 import toast from "react-hot-toast";
-import CurrencyFormat from "react-currency-format";
+import Currency from "react-currency-formatter";
 
 const CartPreviewTag = () => {
      const cartCount = useSelector(
-          (state: RootState) => state.cartCounter.value
+          (state: RootState) => state.cartCounter.items.length
      );
      const [previewQty, setPreviewQty] = useState<number>(0);
      const dispatch = useDispatch();
@@ -57,20 +57,12 @@ const CartPreviewTag = () => {
                     </div>
                </div>
                <div className="flex items-center text-xs text-left px-1 py-[2px] border-b border-gray-600">
-                    <span className="text-gray-500 w-fit uppercase text-[9px]">
+                    <span className="text-gray-500 w-fit uppercase text-[9px] pr-2">
                          Sub-total
                     </span>
-                    <CurrencyFormat
-                         value={cartCount * 50}
-                         thousandSeparator={true}
-                         prefix={"$"}
-                         renderText={(value) => (
-                              <span className="text-orange-500 pl-2">
-                                   {value}
-                              </span>
-                         )}
-                         displayType={"text"}
-                    />
+                    <span className="text-orange-700">
+                         <Currency quantity={cartCount * 50} />
+                    </span>
                </div>
           </div>
      );
