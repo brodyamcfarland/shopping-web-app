@@ -58,7 +58,7 @@ export const cartSlice = createSlice({
                     );
                     return;
                } else {
-                    state.items = [...state.items, action.payload];
+                    state.items = newArray;
                }
           }, // ready to test
           removeFromBasket: (state, action: PayloadAction<any>) => {

@@ -6,12 +6,13 @@ const Banner = () => {
                <div className="border-b shadow-lg border-gray-600">
                     <Image
                          src="/GET_LONG_BANNER.png"
-                         height={100}
-                         width={300}
+                         height={1000}
+                         width={3000}
                          alt="Logo"
                          title="Home"
-                         className="object-contain w-full"
+                         className="object-contain w-auto h-auto"
                          unoptimized
+                         priority
                     />
                </div>
           </div>

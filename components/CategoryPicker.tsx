@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ProductQuery } from "../pages";
 
 const CategoryPicker = () => {
      return (

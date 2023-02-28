@@ -80,9 +80,11 @@ const Sidebar = () => {
                                         strokeWidth={2}
                                    />
                                    <p className="flex-1 text-left">Cart</p>
-                                   <span className="h-5 w-5 bg-red-700 rounded-full flex items-center justify-center text-xs border shadow-md">
-                                        {cartCount}
-                                   </span>
+                                   {cartCount > 0 && (
+                                        <span className="h-5 w-5 bg-red-700 rounded-full flex items-center justify-center text-xs border shadow-md">
+                                             {cartCount}
+                                        </span>
+                                   )}
                               </Link>
                          </motion.div>
                          <motion.div

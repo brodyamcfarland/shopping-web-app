@@ -1,18 +1,17 @@
-import type { NextPage } from "next";
+import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
-import ProductCards from "../components/ProductCards";
 import Layout from "../components/Layout";
 import CategoryPicker from "../components/CategoryPicker";
+import { ProductQuery } from ".";
 
-const Categories = () => {
+const Categories = ({ products }: ProductQuery) => {
      return (
           <Layout>
                <Head>
                     <title>Shopping: Categories</title>
                     <link rel="icon" href="/favicon.ico" />
                </Head>
-               <CategoryPicker/>
-               <ProductCards />
+               <CategoryPicker />
           </Layout>
      );
 };
