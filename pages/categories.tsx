@@ -1,8 +1,8 @@
-import type { GetServerSideProps, NextPage } from "next";
+import type { GetServerSideProps } from "next";
 import Head from "next/head";
 import Layout from "../components/Layout";
 import CategoryPicker from "../components/CategoryPicker";
-import { ProductQuery } from ".";
+import { ProductQuery } from "../types";
 
 const Categories = ({ products }: ProductQuery) => {
      return (
@@ -11,9 +11,21 @@ const Categories = ({ products }: ProductQuery) => {
                     <title>Shopping: Categories</title>
                     <link rel="icon" href="/favicon.ico" />
                </Head>
-               <CategoryPicker />
+               <CategoryPicker products={products} />
           </Layout>
      );
 };
 
 export default Categories;
+
+export const getServerSideProps: GetServerSideProps = async () => {
+     const products = await fetch("https://fakestoreapi.com/products").then(
+          (res) => res.json()
+     );
+
+     return {
+          props: {
+               products,
+          },
+     };
+};

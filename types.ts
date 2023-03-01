@@ -17,3 +17,7 @@ export interface Items {
      rating: number;
      isFreeShipping: boolean;
 }
+
+export interface ProductQuery {
+     products: Products[];
+}

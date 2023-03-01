@@ -1,6 +1,5 @@
-import { ProductQuery } from "../pages";
 import ProductCard from "./ProductCard";
-import { Products } from "../types";
+import { ProductQuery, Products } from "../types";
 
 const ProductCards = ({ products }: ProductQuery) => {
      return (

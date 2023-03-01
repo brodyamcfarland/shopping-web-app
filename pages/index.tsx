@@ -2,11 +2,7 @@ import type { GetServerSideProps } from "next";
 import Head from "next/head";
 import ProductCards from "../components/ProductCards";
 import Layout from "../components/Layout";
-import { Products } from "../types";
-
-export interface ProductQuery {
-     products: Products[];
-}
+import { ProductQuery } from "../types";
 
 const Home = ({ products }: ProductQuery) => {
      return (

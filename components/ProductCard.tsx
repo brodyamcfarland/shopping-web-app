@@ -29,7 +29,7 @@ const ProductCard = ({
                     scale: 1.02,
                }}
                whileTap={{ scale: 1 }}
-               className="flex select-none relative justify-start flex-col bg-[#171717] hover:bg-[#0e0e0e] border border-gray-600 rounded-lg w-[11rem] md:w-[13rem] lg:w-[14rem] xl:w-[15rem] h-[22rem] gap-2 opacity-90 hover:opacity-100 duration-300"
+               className="flex select-none relative justify-start flex-col bg-[#171717] hover:bg-[#0e0e0e] border border-gray-600 rounded-lg w-[11rem] md:w-[13rem] lg:w-[14rem] xl:w-[15rem] h-[24rem] gap-2 opacity-90 hover:opacity-100 duration-300"
           >
                <Image
                     src={image}
@@ -39,7 +39,9 @@ const ProductCard = ({
                     className="w-full h-2/5 rounded-tr-lg rounded-tl-lg border-b border-gray-600 bg-white object-contain hover:cursor-pointer hover:brightness-125 duration-300"
                     onClick={() => router.push("/shop")}
                />
-               <h3 className="text-sm px-1 font-semibold">{title}</h3>
+               <h3 className="text-sm px-2 font-semibold line-clamp-2">
+                    {title}
+               </h3>
                <p className="text-xs text-gray-400 text-left px-2 line-clamp-4">
                     {description}
                </p>
