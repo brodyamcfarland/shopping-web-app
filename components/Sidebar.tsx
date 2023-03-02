@@ -54,7 +54,11 @@ const Sidebar = () => {
                               transition={{ duration: 0.5, delay: 0 }}
                          >
                               <Link
-                                   className="sidebarButtons"
+                                   className={`sidebarButtons ${
+                                        router.pathname === "/"
+                                             ? "brightness-150"
+                                             : ""
+                                   }`}
                                    href="/"
                                    title="Home"
                               >
@@ -71,7 +75,11 @@ const Sidebar = () => {
                               transition={{ duration: 0.5, delay: 0.1 }}
                          >
                               <Link
-                                   className="sidebarButtons"
+                                   className={`sidebarButtons ${
+                                        router.pathname === "/cart"
+                                             ? "brightness-150"
+                                             : ""
+                                   }`}
                                    href="/cart"
                                    title="Cart"
                               >
@@ -93,7 +101,11 @@ const Sidebar = () => {
                               transition={{ duration: 0.5, delay: 0.2 }}
                          >
                               <Link
-                                   className="sidebarButtons"
+                                   className={`sidebarButtons ${
+                                        router.pathname === "/categories"
+                                             ? "brightness-150"
+                                             : ""
+                                   }`}
                                    href="/categories"
                                    title="Categories"
                               >
@@ -111,7 +123,11 @@ const Sidebar = () => {
                               transition={{ duration: 0.5, delay: 0.3 }}
                          >
                               <Link
-                                   className="sidebarButtons"
+                                   className={`sidebarButtons ${
+                                        router.pathname === "/sale"
+                                             ? "brightness-150"
+                                             : ""
+                                   }`}
                                    href="/sale"
                                    title="Deals"
                               >
@@ -128,7 +144,11 @@ const Sidebar = () => {
                               transition={{ duration: 0.5, delay: 0.4 }}
                          >
                               <Link
-                                   className="sidebarButtons"
+                                   className={`sidebarButtons ${
+                                        router.pathname === "/about"
+                                             ? "brightness-150"
+                                             : ""
+                                   }`}
                                    href="/about"
                                    title="About"
                               >
@@ -147,7 +167,11 @@ const Sidebar = () => {
                                    transition={{ duration: 0.5, delay: 0.5 }}
                               >
                                    <Link
-                                        className="sidebarButtons"
+                                        className={`sidebarButtons ${
+                                             router.pathname === "/orders"
+                                                  ? "brightness-150"
+                                                  : ""
+                                        }`}
                                         href="/orders"
                                         title="Orders"
                                    >
@@ -166,7 +190,11 @@ const Sidebar = () => {
                                    transition={{ duration: 0.5, delay: 0.6 }}
                               >
                                    <Link
-                                        className="sidebarButtons"
+                                        className={`sidebarButtons ${
+                                             router.pathname === "/settings"
+                                                  ? "brightness-150"
+                                                  : ""
+                                        }`}
                                         href="/settings"
                                         title="Settings"
                                    >

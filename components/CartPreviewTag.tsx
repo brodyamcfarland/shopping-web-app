@@ -60,14 +60,17 @@ const CartPreviewTag = () => {
                          </div>
                     </div>
                ))}
-               <div className="flex items-center text-xs text-left px-1 py-[2px] border-b border-gray-600">
-                    <span className="text-gray-500 w-fit uppercase text-[9px] pr-2">
-                         Sub-total
-                    </span>
-                    <span className="text-orange-700">
-                         <Currency quantity={totalPrice} />
-                    </span>
-               </div>
+               {totalQuantity > 0 && (
+                    <div className="flex items-center text-xs text-left px-1 py-[2px] border-b border-gray-600">
+                         <span className="text-gray-500 w-fit uppercase text-[9px] pr-2">
+                              Sub-total
+                         </span>
+
+                         <span className="text-orange-700">
+                              <Currency quantity={totalPrice} />
+                         </span>
+                    </div>
+               )}
           </div>
      );
 };
