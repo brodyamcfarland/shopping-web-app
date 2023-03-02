@@ -12,10 +12,8 @@ export interface Items {
      title: string;
      price: number;
      description: string;
-     category: string;
      image: string;
-     rating: number;
-     isFreeShipping: boolean;
+     quantity: number;
 }
 
 export interface ProductQuery {

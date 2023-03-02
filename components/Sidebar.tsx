@@ -23,7 +23,7 @@ const Sidebar = () => {
      const router = useRouter();
      const { data: session } = useSession();
      const cartCount = useSelector(
-          (state: RootState) => state.cartCounter.items.length
+          (state: RootState) => state.cartCounter.totalQuantity
      );
 
      return (

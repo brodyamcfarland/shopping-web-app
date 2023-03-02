@@ -1,56 +1,74 @@
 import { MinusCircleIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { incrementByAmount, increment } from "../state/slices/cartSlice";
+import { addToCartByAmount } from "../state/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { PlusIcon } from "@heroicons/react/24/solid";
 import { RootState } from "../state/store";
+import { Items } from "../types";
 
-const AddToCartButton = () => {
-     const [items, setItems] = useState<number>(1);
-     const cartCount = useSelector(
-          (state: RootState) => state.cartCounter.items.length
+interface Props {
+     id: number;
+     title: string;
+     price: number;
+     description: string;
+     image: string;
+}
+
+const AddToCartButton = ({ id, title, price, description, image }: Props) => {
+     const [quantity, setQuantity] = useState<number>(1);
+     const cart = useSelector(
+          (state: RootState) => state.cartCounter.totalQuantity
      );
      const dispatch = useDispatch();
 
      const decrement = () => {
-          if (items <= 1) {
-               setItems(1);
+          if (quantity <= 1) {
+               setQuantity(1);
           } else {
-               setItems(items - 1);
+               setQuantity(quantity - 1);
           }
      };
 
      const addToCart = () => {
-          dispatch(incrementByAmount(items));
-          setItems(1);
-          if (cartCount + items >= 100) {
+          let itemToAdd: Items = {
+               id: id,
+               title: title,
+               price: price,
+               description: description,
+               image: image,
+               quantity: quantity,
+          };
+          dispatch(addToCartByAmount(itemToAdd));
+          setQuantity(1);
+          if (cart + quantity >= 100) {
                toast.error(
-                    "The Quantity Limit has been reached (100). Please lower your quantity amount."
+                    "You have reached the Maximum Cart Limit (99). Create a seperate order or update your cart."
                );
           } else {
-               toast.success(`${items} Item(s) Added to Cart!`);
+               toast.success(`${quantity} Item(s) Added to Cart!`);
           }
+          console.log(cart);
      };
 
      return (
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 select-none">
                <div className="flex flex-1 items-center justify-start gap-1 pl-2">
                     <button
                          title="Increase Quantity"
                          className="flex items-center justify-center"
-                         onClick={() => setItems(items + 1)}
+                         onClick={() => setQuantity(quantity + 1)}
                     >
                          <PlusCircleIcon className="h-8 w-8 hover:bg-white/30 rounded-full duration-300 ease-out" />
                     </button>
                     <span className="flex items-center justify-center px-1 text-md w-5">
-                         {items < 0 ? 0 : items}
+                         {quantity < 0 ? 0 : quantity}
                     </span>
                     <button
                          className="flex items-center justify-center disabled:opacity-50"
                          onClick={() => decrement()}
                          title="Decrease Quanitity"
-                         disabled={items === 1}
+                         disabled={quantity === 1}
                     >
                          <MinusCircleIcon className="h-8 w-8 hover:bg-white/30 rounded-full duration-300 ease-out" />
                     </button>

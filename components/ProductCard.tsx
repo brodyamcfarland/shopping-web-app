@@ -14,23 +14,10 @@ interface Props {
      image: string;
 }
 
-const ProductCard = ({
-     id,
-     title,
-     price,
-     description,
-     category,
-     image,
-}: Props) => {
+const ProductCard = ({ id, title, price, description, image }: Props) => {
      const router = useRouter();
      return (
-          <motion.div
-               whileHover={{
-                    scale: 1.02,
-               }}
-               whileTap={{ scale: 1 }}
-               className="flex select-none relative justify-start flex-col bg-[#171717] hover:bg-[#0e0e0e] border border-gray-600 rounded-lg w-[11rem] md:w-[13rem] lg:w-[14rem] xl:w-[15rem] h-[24rem] gap-2 opacity-90 hover:opacity-100 duration-300"
-          >
+          <div className="flex relative justify-start flex-col bg-[#171717] hover:bg-[#0e0e0e] border border-gray-600 rounded-lg w-[11rem] md:w-[13rem] lg:w-[14rem] xl:w-[15rem] h-[24rem] gap-2 opacity-90 hover:opacity-100 duration-300">
                <Image
                     src={image}
                     height={100}
@@ -45,18 +32,24 @@ const ProductCard = ({
                <p className="text-xs text-gray-400 text-left px-2 line-clamp-4">
                     {description}
                </p>
-               <div className="flex w-fit m-auto text-orange-500 pr-1">
+               <div className="flex w-fit m-auto select-none text-orange-500 pr-1">
                     <Currency quantity={price} />
                </div>
 
-               <AddToCartButton />
+               <AddToCartButton
+                    id={id}
+                    title={title}
+                    price={price}
+                    description={description}
+                    image={image}
+               />
                <div
                     className="absolute top-2 left-3"
                     onClick={() => router.push("/shop")}
                >
                     <EllipsisVerticalIcon className="h-6 w-6 hover:bg-white/5 rounded-full hover:cursor-pointer" />
                </div>
-          </motion.div>
+          </div>
      );
 };
 

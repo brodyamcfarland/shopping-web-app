@@ -17,7 +17,7 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
      const cartCount = useSelector(
-          (state: RootState) => state.cartCounter.items.length
+          (state: RootState) => state.cartCounter.totalQuantity
      );
      const [showSidebar, setShowSidebar] = useState<boolean>(true);
      const [showRightSidebar, setShowRightSidebar] = useState<boolean>(true);

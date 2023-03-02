@@ -1,12 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { Items } from "../../types";
-interface CounterState {
+interface CartState {
      items: Items[];
+     totalQuantity: number;
+     totalPrice: number;
 }
 
-const initialState: CounterState = {
+const initialState: CartState = {
      items: [],
+     totalQuantity: 0,
+     totalPrice: 0,
 };
 
 const maxQuantity = 99;
@@ -15,73 +19,66 @@ export const cartSlice = createSlice({
      name: "cartCounter",
      initialState,
      reducers: {
-          increment: (state) => {
-               if (state.items.length <= maxQuantity) {
-                    if (state.items.length === maxQuantity) {
+          incrementQuantity: (state, action: PayloadAction<number>) => {
+               const itemId = action.payload;
+               const existingItem = state.items.find(
+                    (item) => item.id === itemId
+               );
+               if (existingItem) {
+                    existingItem.quantity++;
+                    state.totalQuantity++;
+                    state.totalPrice += existingItem.price;
+               }
+          },
+          addToCartByAmount: (state, action: PayloadAction<Items>) => {
+               let itemToAdd = action.payload;
+               let existingItem = state.items.find(
+                    (item) => item.id === itemToAdd.id
+               );
+               if (existingItem) {
+                    // If the item already exists, check if it hits our maxQuantity constraint and then update its quantity by adding the new quantity amount
+                    if (
+                         existingItem.quantity + itemToAdd.quantity >
+                         maxQuantity
+                    ) {
+                         console.log("Maximum Quantity Reached for this item.");
                          return;
                     } else {
-                         state.items.length += 1;
+                         existingItem.quantity += itemToAdd.quantity;
+                         state.totalQuantity += itemToAdd.quantity;
+                         state.totalPrice +=
+                              itemToAdd.price * itemToAdd.quantity;
                     }
-               }
-          },
-          decrement: (state) => {
-               if (state.items.length === 0) {
-                    return;
                } else {
-                    state.items.length -= 1;
-               }
-          },
-          incrementByAmount: (state, action: PayloadAction<number>) => {
-               if (state.items.length + action.payload > maxQuantity) {
-                    return;
-               } else {
-                    state.items.length += action.payload;
-               }
-          },
-          addToBasket: (state, action: PayloadAction<Items>) => {
-               if (state.items.length <= maxQuantity) {
-                    if (state.items.length === maxQuantity) {
-                         console.log(
-                              "Cannot Add to Basket -- Max Quanitity Reached"
-                         );
-                         return;
-                    } else {
-                         state.items = [...state.items, action.payload];
-                    }
-               }
-          }, //ready to test
-          addToBasketByAmount: (state, action: PayloadAction<Items>) => {
-               let newArray = [...state.items, action.payload];
-               if (newArray.length >= maxQuantity) {
-                    console.log(
-                         "Cannot Add to Basket -- Max Quanitity Reached"
-                    );
-                    return;
-               } else {
+                    // If the item doesn't exist, add it to the cart with a quantity of whatever was set
+                    let newArray = [...state.items, action.payload];
                     state.items = newArray;
+                    state.totalQuantity += itemToAdd.quantity;
+                    state.totalPrice += itemToAdd.price * itemToAdd.quantity;
                }
           }, // ready to test
-          removeFromBasket: (state, action: PayloadAction<any>) => {
-               const index = state.items.findIndex(
-                    (cartItem) => cartItem.id === action.payload.id
-               );
+          removeFromCart: (state, action: PayloadAction<number>) => {
+               const id = action.payload;
+               const existingItem = state.items.find((item) => item.id === id);
+               if (existingItem) {
+                    // If the item exists, reduce its quantity by 1
+                    existingItem.quantity--;
+                    state.totalQuantity--;
+                    state.totalPrice -= existingItem.price;
 
-               let newCart = [...state.items];
-
-               if (index >= 0) {
-                    newCart.splice(index, 1);
-               } else {
-                    console.warn(
-                         `Cannot Remove Product (id: ${action.payload.id}) as its not in the cart`
-                    );
+                    // If the item's quantity is now 0, remove it from the cart
+                    if (existingItem.quantity === 0) {
+                         state.items = state.items.filter(
+                              (item) => item.id !== id
+                         );
+                    }
                }
-
-               state.items = newCart;
-          }, // I think ready to test
+          },
      },
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = cartSlice.actions;
+export const { addToCartByAmount, removeFromCart, incrementQuantity } =
+     cartSlice.actions;
 
 export default cartSlice.reducer;
