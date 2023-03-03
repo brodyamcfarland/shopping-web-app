@@ -33,13 +33,19 @@ const Cart = () => {
                     <link rel="icon" href="/favicon.ico" />
                </Head>
                <div className="flex-1">
-                    <div className="flex flex-col mx-2 md:mx-auto mt-4 border border-gray-600 bg-[#171717] max-w-4xl">
+                    <div className="flex flex-col mx-2 md:mx-auto mt-4 border border-gray-600 bg-[#171717] max-w-4xl rounded-md">
                          <h2 className="py-2 border-b border-gray-600 font-bold">
                               My Cart
                          </h2>
+                         <p className="text-sm text-gray-300 px-4 md:px-20 py-4 border-b border-gray-600">
+                              All Orders over $200 will be elegible for FREE
+                              Shipping. Users are required to Sign In in order
+                              to proceed to checkout. A 7.5% Sales Tax will also
+                              be added to the total of all orders.
+                         </p>
                          <CartPreviewTag />
                          {totalQuantity === 0 && (
-                              <span className="select-none flex items-center justify-center text-red-500 text-md py-1 gap-2 bg-red-400/10">
+                              <span className="select-none flex items-center justify-center bg-gradient-to-b from-red-500/5 to-transparent text-md text-red-500 gap-2 bg-red-400/10 py-10">
                                    <ExclamationCircleIcon className="h-10 w-10" />
                                    Your Cart is currently empty.
                               </span>

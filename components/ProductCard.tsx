@@ -14,7 +14,14 @@ interface Props {
      image: string;
 }
 
-const ProductCard = ({ id, title, price, description, image }: Props) => {
+const ProductCard = ({
+     id,
+     title,
+     price,
+     description,
+     image,
+     category,
+}: Props) => {
      const router = useRouter();
      return (
           <div className="flex relative justify-start flex-col bg-[#171717] hover:bg-[#0e0e0e] border border-gray-600 rounded-lg w-[11rem] md:w-[13rem] lg:w-[14rem] xl:w-[15rem] h-[24rem] gap-2 opacity-90 hover:opacity-100 duration-300">
@@ -42,6 +49,7 @@ const ProductCard = ({ id, title, price, description, image }: Props) => {
                     price={price}
                     description={description}
                     image={image}
+                    category={category}
                />
                <div
                     className="absolute top-2 left-3"

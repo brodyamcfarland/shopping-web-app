@@ -14,6 +14,7 @@ export interface Items {
      description: string;
      image: string;
      quantity: number;
+     category: string;
 }
 
 export interface ProductQuery {

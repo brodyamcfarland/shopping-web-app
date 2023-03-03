@@ -13,9 +13,17 @@ interface Props {
      price: number;
      description: string;
      image: string;
+     category: string;
 }
 
-const AddToCartButton = ({ id, title, price, description, image }: Props) => {
+const AddToCartButton = ({
+     id,
+     title,
+     price,
+     description,
+     image,
+     category,
+}: Props) => {
      const [quantity, setQuantity] = useState<number>(1);
      const cart = useSelector(
           (state: RootState) => state.cartCounter.totalQuantity
@@ -38,6 +46,7 @@ const AddToCartButton = ({ id, title, price, description, image }: Props) => {
                description: description,
                image: image,
                quantity: quantity,
+               category: category,
           };
           dispatch(addToCartByAmount(itemToAdd));
           setQuantity(1);
