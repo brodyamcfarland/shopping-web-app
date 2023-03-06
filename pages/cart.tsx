@@ -14,6 +14,9 @@ const Cart = () => {
      const totalPrice = useSelector(
           (state: RootState) => state.cartCounter.totalPrice
      );
+     const saleAmount = useSelector(
+          (state: RootState) => state.cartCounter.saleAmount
+     );
      const salesTax = totalPrice * 0.0725;
 
      const calculateShipping = (totalPrice: number) => {
@@ -32,8 +35,8 @@ const Cart = () => {
                     <title>Shopping: Cart</title>
                     <link rel="icon" href="/favicon.ico" />
                </Head>
-               <div className="flex-1">
-                    <div className="flex flex-col mx-2 md:mx-auto mt-4 border border-gray-600 bg-[#171717] max-w-4xl rounded-md">
+               <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-track-black scrollbar-thumb-white/50 scrollbar-thumb-rounded-lg">
+                    <div className="flex flex-col mx-2 md:mx-auto my-4 border border-gray-600 bg-[#171717] max-w-4xl rounded-md">
                          <h2 className="py-2 border-b border-gray-600 font-bold">
                               My Cart
                          </h2>
@@ -52,9 +55,21 @@ const Cart = () => {
                          )}
                          {totalQuantity > 0 && (
                               <>
+                                   {saleAmount > 0 && (
+                                        <div className="flex items-center text-xs text-left px-1 py-[2px] border-b border-gray-600 bg-[#252525]">
+                                             <span className="text-gray-500 w-fit uppercase text-[9px] pr-[2.2rem]">
+                                                  - SALE
+                                             </span>
+                                             <span>
+                                                  <Currency
+                                                       quantity={saleAmount}
+                                                  />
+                                             </span>
+                                        </div>
+                                   )}
                                    <div className="flex items-center text-xs text-left px-1 py-[2px] border-b border-gray-600 bg-[#252525]">
                                         <span className="text-gray-500 w-fit uppercase text-[9px] pr-[2.33rem]">
-                                             TAX
+                                             + TAX
                                         </span>
                                         <span>
                                              <Currency quantity={salesTax} />
@@ -62,7 +77,7 @@ const Cart = () => {
                                    </div>
                                    <div className="flex items-center text-xs text-left px-1 py-[2px] border-b border-gray-600 bg-[#252525]">
                                         <span className="text-gray-500 w-fit uppercase text-[9px] pr-[.8rem]">
-                                             SHIPPING
+                                             + SHIPPING
                                         </span>
                                         {shippingPrice === 0 ? (
                                              <span>FREE</span>

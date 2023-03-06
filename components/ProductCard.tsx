@@ -39,8 +39,20 @@ const ProductCard = ({
                <p className="text-xs text-gray-400 text-left px-2 line-clamp-4">
                     {description}
                </p>
-               <div className="flex w-fit m-auto select-none text-orange-500 pr-1">
-                    <Currency quantity={price} />
+               <div className="flex items-center w-fit m-auto select-none space-x-2">
+                    <div
+                         className={`${
+                              category === "electronics" &&
+                              "text-sm line-through "
+                         } text-orange-500`}
+                    >
+                         <Currency quantity={price} />
+                    </div>
+                    {category === "electronics" && (
+                         <div className="text-orange-300">
+                              <Currency quantity={price * 0.8} />
+                         </div>
+                    )}
                </div>
 
                <AddToCartButton

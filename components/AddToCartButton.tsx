@@ -30,6 +30,15 @@ const AddToCartButton = ({
      );
      const dispatch = useDispatch();
 
+     const increment = () => {
+          if (quantity >= 99) {
+               setQuantity(99);
+               toast.error("Max Quantity Reached. (99)");
+          } else {
+               setQuantity(quantity + 1);
+          }
+     };
+
      const decrement = () => {
           if (quantity <= 1) {
                setQuantity(1);
@@ -66,7 +75,7 @@ const AddToCartButton = ({
                     <button
                          title="Increase Quantity"
                          className="flex items-center justify-center"
-                         onClick={() => setQuantity(quantity + 1)}
+                         onClick={() => increment()}
                     >
                          <PlusCircleIcon className="h-8 w-8 hover:bg-white/30 rounded-full duration-300 ease-out" />
                     </button>

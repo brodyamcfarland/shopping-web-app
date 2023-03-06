@@ -14,8 +14,8 @@ const Sale = ({ products }: ProductQuery) => {
                     <title>Shopping: Deals</title>
                     <link rel="icon" href="/favicon.ico" />
                </Head>
-               <div className="flex-1">
-                    <div className="flex flex-col mx-2 md:mx-auto mt-4 border border-gray-600 bg-[#171717] max-w-4xl rounded-md">
+               <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-track-black scrollbar-thumb-white/50 scrollbar-thumb-rounded-lg">
+                    <div className="flex flex-col mx-2 md:mx-auto my-4 border border-gray-600 bg-[#171717] max-w-4xl rounded-md">
                          <h2 className="py-2 border-b border-gray-600 font-bold">
                               Sales
                          </h2>
@@ -25,7 +25,7 @@ const Sale = ({ products }: ProductQuery) => {
                               width={4000}
                               alt="Logo"
                               title="Home"
-                              className="object-contain w-full h-[10rem] bg-black border-b border-gray-600"
+                              className="object-contain w-full h-[8rem] bg-black border-b border-gray-600"
                               unoptimized
                               priority
                          />

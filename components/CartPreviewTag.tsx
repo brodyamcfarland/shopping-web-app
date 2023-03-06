@@ -30,9 +30,17 @@ const CartPreviewTag = () => {
                               <h3 className="truncate text-xs">
                                    {product.title}
                               </h3>
-                              <span className="text-orange-500">
-                                   <Currency quantity={product.price} />
-                              </span>
+                              {product.category === "electronics" ? (
+                                   <span className="text-orange-300">
+                                        <Currency
+                                             quantity={product.price * 0.8}
+                                        />
+                                   </span>
+                              ) : (
+                                   <span className="text-orange-500">
+                                        <Currency quantity={product.price} />
+                                   </span>
+                              )}
                          </div>
                          <div
                               className="flex items-center justify-center border border-gray-600 font-medium rounded-md bg-black"
@@ -65,7 +73,6 @@ const CartPreviewTag = () => {
                          <span className="text-gray-500 w-fit uppercase text-[9px] pr-2">
                               Sub-total
                          </span>
-
                          <span className="text-orange-700">
                               <Currency quantity={totalPrice} />
                          </span>

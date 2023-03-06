@@ -4,7 +4,7 @@ import { ProductQuery, Products } from "../types";
 const ProductCards = ({ products }: ProductQuery) => {
      return (
           <div className="flex justify-center w-full overflow-y-auto scrollbar-thin scrollbar-track-black scrollbar-thumb-white/50 scrollbar-thumb-rounded-lg">
-               <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-5 py-4">
+               <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-2 md:gap-5 py-4">
                     {products?.map(
                          ({
                               id,
