@@ -1,4 +1,4 @@
-import { AiOutlineGithub } from "react-icons/ai";
+import { AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai";
 import { RxTwitterLogo } from "react-icons/rx";
 import { BiWorld } from "react-icons/bi";
 import Link from "next/link";
@@ -11,22 +11,36 @@ const Footer = () => {
                </span>
                <div className="flex gap-3">
                     <Link
-                         href="/"
+                         href="https://github.com/brodyamcfarland"
+                         target="_blank"
                          className="opacity-50 hover:opacity-100 duration-300"
+                         title="Github"
                     >
                          <AiOutlineGithub size={15} />
                     </Link>
                     <Link
-                         href="/"
+                         href="https://twitter.com/off2eth"
+                         target="_blank"
                          className="opacity-50 hover:opacity-100 duration-300"
+                         title="Dev Twitter"
                     >
                          <RxTwitterLogo size={15} />
                     </Link>
                     <Link
-                         href="/"
+                         href="https://website-v3-orcin.vercel.app/"
+                         target="_blank"
                          className="opacity-50 hover:opacity-100 duration-300"
+                         title="Dev Website"
                     >
                          <BiWorld size={15} />
+                    </Link>
+                    <Link
+                         href="https://www.linkedin.com/in/brody-mcfarland-93a91b106/"
+                         target="_blank"
+                         className="opacity-50 hover:opacity-100 duration-300"
+                         title="LinkedIn"
+                    >
+                         <AiOutlineLinkedin size={15} />
                     </Link>
                </div>
           </footer>
