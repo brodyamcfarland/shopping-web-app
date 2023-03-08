@@ -17,7 +17,7 @@ const RightSideBarButton = ({
                className={`${
                     showRightSidebar === false &&
                     "animate-pulse px-2 bg-white/20"
-               } hidden md:flex flex-col text-gray-300 items-center justify-center border-l border-y border-gray-600 bg-[#131313] w-3 hover:bg-white/30 shadow-inner duration-300 hover:cursor-pointer`}
+               } hidden lg:flex flex-col text-gray-300 items-center justify-center border-l border-y border-gray-600 bg-[#131313] w-3 hover:bg-white/30 shadow-inner duration-300 hover:cursor-pointer`}
           >
                {showRightSidebar === true ? (
                     <ChevronRightIcon className="h-4 w-4" strokeWidth={2} />

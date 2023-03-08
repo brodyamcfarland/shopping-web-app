@@ -8,7 +8,7 @@ const Categories = ({ products }: ProductQuery) => {
      return (
           <Layout>
                <Head>
-                    <title>Shopping: Categories</title>
+                    <title>Get: Categories</title>
                     <link rel="icon" href="/favicon.ico" />
                </Head>
                <CategoryPicker products={products} />

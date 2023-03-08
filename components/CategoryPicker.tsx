@@ -14,7 +14,7 @@ const CategoryPicker = ({ products }: ProductQuery) => {
                     initial={{ y: -50, opacity: 50, zIndex: -30 }}
                     animate={{ y: 0, opacity: 100, zIndex: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="border-b  border-gray-600 gap-2 bg-[#171717]"
+                    className="border-b border-gray-600 gap-2 bg-[#171717]"
                >
                     <div className="flex p-3 items-center justify-center border-gray-600 text-[10px] md:text-sm">
                          <button
@@ -80,7 +80,7 @@ const CategoryPicker = ({ products }: ProductQuery) => {
                          </button>
                     </div>
                </motion.div>
-               <div className="flex justify-center w-full overflow-y-auto scrollbar-thin scrollbar-track-black scrollbar-thumb-white/50 scrollbar-thumb-rounded-lg">
+               <div className="flex flex-1 justify-center w-full overflow-y-auto scrollbar-thin scrollbar-track-black scrollbar-thumb-white/50 scrollbar-thumb-rounded-lg">
                     <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-2 md:gap-5 py-4">
                          {products
                               ?.filter(

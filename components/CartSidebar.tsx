@@ -15,7 +15,7 @@ const CartSidebar = () => {
                     duration: 0.05,
                     default: { ease: "linear" },
                }}
-               className="hidden md:flex flex-col w-[16rem] max-w-[20rem] border bg-[#171717] shadow-md border-gray-600 h-screen"
+               className="hidden lg:flex flex-col w-[16rem] max-w-[20rem] border bg-[#171717] shadow-md border-gray-600 h-screen"
           >
                <h3 className="font-medium text-md py-1 border-b border-gray-600">
                     Cart Preview

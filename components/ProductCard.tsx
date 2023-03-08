@@ -31,7 +31,7 @@ const ProductCard = ({
                     width={300}
                     alt=""
                     className="w-full h-2/5 rounded-tr-lg rounded-tl-lg border-b border-gray-600 bg-white object-contain hover:cursor-pointer hover:brightness-125 duration-300"
-                    onClick={() => router.push("/shop")}
+                    onClick={() => router.push(`/product/${id}`)}
                />
                <h3 className="text-sm px-2 font-semibold line-clamp-2">
                     {title}

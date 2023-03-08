@@ -5,7 +5,7 @@ const Settings = () => {
      return (
           <Layout>
                <Head>
-                    <title>Shopping: Settings</title>
+                    <title>Get: Settings</title>
                     <link rel="icon" href="/favicon.ico" />
                </Head>
                <div className="flex-1">

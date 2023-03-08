@@ -8,7 +8,7 @@ const Orders = () => {
      return (
           <Layout>
                <Head>
-                    <title>Shopping: Orders</title>
+                    <title>Get: Orders</title>
                     <link rel="icon" href="/favicon.ico" />
                </Head>
                <div className="flex-1">

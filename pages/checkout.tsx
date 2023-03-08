@@ -3,13 +3,15 @@ import Layout from "../components/Layout";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
+// This needs to be a protected Auth Route
+
 const Checkout = () => {
      const { data: session } = useSession();
 
      return (
           <Layout>
                <Head>
-                    <title>Shopping: Checkout</title>
+                    <title>Get: Checkout</title>
                     <link rel="icon" href="/favicon.ico" />
                </Head>
                <div className="flex-1">

@@ -8,7 +8,7 @@ const Home = ({ products }: ProductQuery) => {
      return (
           <Layout>
                <Head>
-                    <title>Shopping: Home</title>
+                    <title>Get: Home</title>
                     <link rel="icon" href="/favicon.ico" />
                </Head>
                <ProductCards products={products} />
