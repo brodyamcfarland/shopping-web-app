@@ -2,7 +2,6 @@ import Image from "next/image";
 import AddToCartButton from "./AddToCartButton";
 import { useRouter } from "next/router";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
-import { motion } from "framer-motion";
 import Currency from "react-currency-formatter";
 
 interface Props {
@@ -65,9 +64,10 @@ const ProductCard = ({
                />
                <div
                     className="absolute top-2 left-3"
-                    onClick={() => router.push("/shop")}
+                    onClick={() => router.push(`/product/${id}`)}
+                    title="Details"
                >
-                    <EllipsisVerticalIcon className="h-6 w-6 hover:bg-white/5 rounded-full hover:cursor-pointer" />
+                    <EllipsisVerticalIcon className="h-6 w-6 hover:bg-black/40 bg-black/20 rounded-full hover:cursor-pointer duration-300" />
                </div>
           </div>
      );
