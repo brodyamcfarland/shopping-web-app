@@ -57,8 +57,8 @@ const Cart = () => {
                               <>
                                    {saleAmount > 0 && (
                                         <div className="flex items-center text-xs text-left px-1 py-[2px] border-b border-gray-600 bg-[#252525]">
-                                             <span className="text-gray-500 w-fit uppercase text-[9px] pr-[2.2rem]">
-                                                  - SALE
+                                             <span className="text-gray-500 w-fit uppercase text-[9px] pr-[1.1rem]">
+                                                  DISCOUNT
                                              </span>
                                              <span>
                                                   <Currency
@@ -71,7 +71,7 @@ const Cart = () => {
                                         <span className="text-gray-500 w-fit uppercase text-[9px] pr-[2.33rem]">
                                              + TAX
                                         </span>
-                                        <span>
+                                        <span className="text-orange-700">
                                              <Currency quantity={salesTax} />
                                         </span>
                                    </div>
@@ -80,9 +80,11 @@ const Cart = () => {
                                              + SHIPPING
                                         </span>
                                         {shippingPrice === 0 ? (
-                                             <span>FREE</span>
+                                             <span className="text-green-500">
+                                                  FREE
+                                             </span>
                                         ) : (
-                                             <span>
+                                             <span className="text-orange-700">
                                                   <Currency
                                                        quantity={shippingPrice}
                                                   />

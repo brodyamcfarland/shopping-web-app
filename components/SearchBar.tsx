@@ -1,11 +1,19 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import MobileButtons from "./MobileButtons";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const SearchBar = () => {
-     // Need to flush out search functionality
-     const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {};
+     const router = useRouter();
+     const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+          e.preventDefault();
+          if (!search.length) {
+               return;
+          }
+          router.push(`/search/${search}`);
+     };
 
+     const [search, setSearch] = useState<string>("");
      const [showMoreButtons, setShowMoreButtons] = useState<boolean>(false);
 
      return (
@@ -19,10 +27,14 @@ const SearchBar = () => {
                               className="h-[26px] focus:border-2 border-purple-700 bg-black flex-1 rounded-tl-lg rounded-bl-lg shadow-inner focus:outline-none pl-2 placeholder:italic py-[1px]"
                               type="text"
                               placeholder="Search..."
+                              onChange={(e) =>
+                                   setSearch(e.target.value.toLowerCase())
+                              }
                          />
                          <button
                               className="h-[26px] w-[3rem] flex items-center justify-center p-0.5 overflow-hidden text-sm rounded-tr-lg rounded-br-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:outline-none"
                               title="Search"
+                              type="submit"
                          >
                               <span className="flex justify-center items-center h-full w-full transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-tr-lg rounded-br-lg group-hover:bg-opacity-0">
                                    <MagnifyingGlassIcon className="h-5 w-5" />
