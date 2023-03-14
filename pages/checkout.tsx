@@ -2,7 +2,13 @@ import Head from "next/head";
 import Layout from "../components/Layout";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import {
+     addDoc,
+     collection,
+     doc,
+     serverTimestamp,
+     setDoc,
+} from "firebase/firestore";
 import { db } from "../firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../state/store";
@@ -24,36 +30,25 @@ const Checkout = () => {
 
      const { data: session } = useSession();
 
-     const submitCheckout = async (e: any) => {
-          e.preventDefault();
+     const submitCheckout = async () => {
+          let orderNumber =
+               session?.user?.name?.slice(0, 4) + Date.now().toString();
           const purchasedItems = {
+               orderId: orderNumber,
                quantity: totalQuantity,
                totalPrice: totalPrice,
                items: cart,
                orderedAt: serverTimestamp(),
-               user: {
-                    _id: session?.user?.email!,
-                    name: session?.user?.name!,
-                    avatar:
-                         session?.user?.image! ||
-                         `https://ui-avatars.com/api/?name=${session?.user?.name}`,
-               },
+               user: session?.user?.email,
           };
-
-          let orderNumber =
-               session?.user?.name?.slice(0, 4) + Date.now().toString();
-
-          await addDoc(
-               collection(
-                    db,
-                    "users",
-                    session?.user?.email!,
-                    "orders",
-                    orderNumber,
-                    "items"
-               ),
-               purchasedItems
-          );
+          console.log(purchasedItems);
+          try {
+               await setDoc(doc(db, "orders", orderNumber), purchasedItems);
+          } catch (error) {
+               console.error(error);
+               console.log("didnt work");
+          }
+          // reset all global cart state
           router.push("/orders");
      };
      return (
