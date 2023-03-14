@@ -4,8 +4,10 @@ import { RootState } from "../state/store";
 import toast from "react-hot-toast";
 import Currency from "react-currency-formatter";
 import { incrementQuantity, removeFromCart } from "../state/slices/cartSlice";
+import { useRouter } from "next/router";
 
 const CartPreviewTag = () => {
+     const router = useRouter();
      const totalQuantity = useSelector(
           (state: RootState) => state.cartCounter.totalQuantity
      );
@@ -18,13 +20,20 @@ const CartPreviewTag = () => {
      return (
           <div className="flex flex-col">
                {cart.map((product) => (
-                    <div className="flex items-center text-left gap-2 p-2 border-b border-gray-600 bg-[#252525]">
+                    <div
+                         className="flex items-center text-left gap-2 p-2 border-b border-gray-600 bg-[#252525] hover:bg-[#171717] duration-300"
+                         key={product.id}
+                    >
                          <Image
                               src={product.image}
                               height={100}
                               width={100}
                               alt="Item Image"
-                              className="h-12 w-12 object-contain rounded-md bg-white shadow-md"
+                              className="h-12 w-12 object-contain rounded-md bg-white shadow-md hover:cursor-pointer"
+                              onClick={() =>
+                                   router.push(`/product/${product.id}`)
+                              }
+                              title="View Product"
                          />
                          <div className="flex flex-col flex-1 text-sm w-[3rem] flex-shrink">
                               <h3 className="truncate text-xs">
@@ -70,7 +79,7 @@ const CartPreviewTag = () => {
                ))}
                {totalQuantity > 0 && (
                     <div className="flex items-center text-xs text-left px-1 py-[2px] border-b border-gray-600">
-                         <span className="text-gray-500 w-fit uppercase text-[9px] pr-2">
+                         <span className="text-gray-500 uppercase text-[9px] w-[4rem] pr-2">
                               Sub-total
                          </span>
                          <span className="text-orange-700">

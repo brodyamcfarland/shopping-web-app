@@ -10,6 +10,8 @@ import { RootState } from "../state/store";
 // This needs to be a protected Auth Route
 
 const Checkout = () => {
+     const router = useRouter();
+
      const cart = useSelector((state: RootState) => state.cartCounter.items);
 
      const totalPrice = useSelector(
@@ -52,6 +54,7 @@ const Checkout = () => {
                ),
                purchasedItems
           );
+          router.push("/orders");
      };
      return (
           <Layout>
@@ -60,7 +63,7 @@ const Checkout = () => {
                     <link rel="icon" href="/favicon.ico" />
                </Head>
                <div className="flex-1">
-                    {!session ? (
+                    {session ? (
                          <div className="flex items-center justify-center">
                               <span className="pt-32">
                                    Please Sign in to continue
@@ -69,6 +72,12 @@ const Checkout = () => {
                     ) : (
                          <div className="flex items-center justify-center">
                               <span className="pt-32">Checkout</span>
+                              <button
+                                   className="px-3 border"
+                                   onClick={submitCheckout}
+                              >
+                                   Sends Order to DB
+                              </button>
                          </div>
                     )}
                </div>

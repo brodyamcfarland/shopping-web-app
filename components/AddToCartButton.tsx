@@ -66,7 +66,6 @@ const AddToCartButton = ({
           } else {
                toast.success(`${quantity} Item(s) Added to Cart!`);
           }
-          console.log(cart);
      };
 
      return (

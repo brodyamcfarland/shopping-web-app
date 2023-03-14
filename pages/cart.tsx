@@ -57,7 +57,7 @@ const Cart = () => {
                               <>
                                    {saleAmount > 0 && (
                                         <div className="flex items-center text-xs text-left px-1 py-[2px] border-b border-gray-600 bg-[#252525]">
-                                             <span className="text-gray-500 w-fit uppercase text-[9px] pr-[1.1rem]">
+                                             <span className="text-gray-500 uppercase text-[9px] pr-2 w-[4rem]">
                                                   DISCOUNT
                                              </span>
                                              <span>
@@ -68,7 +68,7 @@ const Cart = () => {
                                         </div>
                                    )}
                                    <div className="flex items-center text-xs text-left px-1 py-[2px] border-b border-gray-600 bg-[#252525]">
-                                        <span className="text-gray-500 w-fit uppercase text-[9px] pr-[2.33rem]">
+                                        <span className="text-gray-500 uppercase text-[9px] pr-2 w-[4rem]">
                                              + TAX
                                         </span>
                                         <span className="text-orange-700">
@@ -76,7 +76,7 @@ const Cart = () => {
                                         </span>
                                    </div>
                                    <div className="flex items-center text-xs text-left px-1 py-[2px] border-b border-gray-600 bg-[#252525]">
-                                        <span className="text-gray-500 w-fit uppercase text-[9px] pr-[.8rem]">
+                                        <span className="text-gray-500 uppercase text-[9px] pr-2 w-[4rem]">
                                              + SHIPPING
                                         </span>
                                         {shippingPrice === 0 ? (
@@ -92,7 +92,7 @@ const Cart = () => {
                                         )}
                                    </div>
                                    <div className="flex items-center text-sm text-left px-1 py-[2px] border-b border-gray-600">
-                                        <span className="text-white w-fit uppercase text-xs font-semibold pr-[1rem]">
+                                        <span className="text-white uppercase text-xs font-semibold pr-2 w-[4rem]">
                                              TOTAL
                                         </span>
                                         <span className="text-green-600 font-semibold">
