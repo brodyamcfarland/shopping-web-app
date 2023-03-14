@@ -63,7 +63,7 @@ const Checkout = () => {
                     <link rel="icon" href="/favicon.ico" />
                </Head>
                <div className="flex-1">
-                    {session ? (
+                    {!session ? (
                          <div className="flex items-center justify-center">
                               <span className="pt-32">
                                    Please Sign in to continue
