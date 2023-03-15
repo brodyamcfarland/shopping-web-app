@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 
 const Profile = () => {
      const router = useRouter();
@@ -12,8 +13,8 @@ const Profile = () => {
                animate={{ opacity: 1 }}
                transition={{ duration: 0.8, delay: 0.8 }}
                className="flex ml-auto md:mx-2 h-fit  gap-2 p-2 items-center hover:cursor-pointer hover:bg-white/5 hover:underline"
-               title="Settings"
-               onClick={() => router.push("/settings")}
+               title="Sign Out"
+               onClick={() => signOut()}
           >
                <Image
                     src={`${session?.user?.image}`}

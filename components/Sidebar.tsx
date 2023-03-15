@@ -189,29 +189,6 @@ const Sidebar = () => {
                                    animate={{ opacity: 1, x: 0 }}
                                    transition={{ duration: 0.5, delay: 0.6 }}
                               >
-                                   <Link
-                                        className={`sidebarButtons ${
-                                             router.pathname === "/settings"
-                                                  ? "brightness-150"
-                                                  : ""
-                                        }`}
-                                        href="/settings"
-                                        title="Settings"
-                                   >
-                                        <CogIcon
-                                             className="h-6 w-6"
-                                             strokeWidth={2}
-                                        />
-                                        <span>Settings</span>
-                                   </Link>
-                              </motion.div>
-                         )}
-                         {session && (
-                              <motion.div
-                                   initial={{ opacity: 0, x: -200 }}
-                                   animate={{ opacity: 1, x: 0 }}
-                                   transition={{ duration: 0.5, delay: 0.7 }}
-                              >
                                    <button
                                         className="sidebarButtons"
                                         onClick={() => signOut()}
@@ -233,7 +210,7 @@ const Sidebar = () => {
                          <motion.div
                               initial={{ opacity: 0 }}
                               animate={{ opacity: 1 }}
-                              transition={{ duration: 0.8, delay: 0.8 }}
+                              transition={{ duration: 0.8, delay: 0.7 }}
                               className="flex h-20 p-2 items-center justify-center hover:cursor-pointer border-t border-gray-600"
                          >
                               <SignInButton />

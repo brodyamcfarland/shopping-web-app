@@ -2,21 +2,18 @@ import Head from "next/head";
 import Layout from "../components/Layout";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import {
-     addDoc,
-     collection,
-     doc,
-     serverTimestamp,
-     setDoc,
-} from "firebase/firestore";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../state/store";
+import { clearCart } from "../state/slices/cartSlice";
+import toast from "react-hot-toast";
 
 // This needs to be a protected Auth Route
 
 const Checkout = () => {
      const router = useRouter();
+     const dispatch = useDispatch();
 
      const cart = useSelector((state: RootState) => state.cartCounter.items);
 
@@ -48,7 +45,8 @@ const Checkout = () => {
                console.error(error);
                console.log("didnt work");
           }
-          // reset all global cart state
+          dispatch(clearCart());
+          toast.success("Checkout Successful. Thank you!");
           router.push("/orders");
      };
      return (
@@ -65,14 +63,44 @@ const Checkout = () => {
                               </span>
                          </div>
                     ) : (
-                         <div className="flex items-center justify-center">
-                              <span className="pt-32">Checkout</span>
-                              <button
-                                   className="px-3 border"
-                                   onClick={submitCheckout}
+                         <div className="flex flex-col mx-2 md:mx-auto my-4 border border-gray-600 bg-[#252525] max-w-4xl rounded-md">
+                              <h2 className="py-2 border-b border-gray-600 font-bold bg-[#171717] rounded-t-md">
+                                   Checkout
+                              </h2>
+                              <form
+                                   className="flex flex-col w-full gap-10 py-4 px-2 md:w-1/2 mx-auto justify-center"
+                                   onSubmit={submitCheckout}
                               >
-                                   Sends Order to DB
-                              </button>
+                                   <div className="flex flex-col border">
+                                        <h3>Shipping Details</h3>
+                                        <label>Address</label>
+                                        <input type="text" />
+                                        <label>Apt/Unit</label>
+                                        <input type="text" />
+                                        <label>City</label>
+                                        <input type="text" />
+                                        <label>State</label>
+                                        <input type="text" />
+                                        <label>Zip Code</label>
+                                   </div>
+                                   <div className="flex flex-col gap-1 border">
+                                        <h3>Payment Details</h3>
+                                        <label>Card Number</label>
+                                        <input type="text" />
+                                        <label>Expiration Date</label>
+                                        <input type="text" />
+                                        <label>CVV</label>
+                                        <input type="text" />
+                                        <label>Cardholder Name</label>
+                                        <input type="text" />
+                                   </div>
+                                   <button
+                                        className="px-3 border"
+                                        type="submit"
+                                   >
+                                        Sends Order to DB
+                                   </button>
+                              </form>
                          </div>
                     )}
                </div>
