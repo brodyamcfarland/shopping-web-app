@@ -6,4 +6,7 @@
      .sidebarButtons {
           @apply gap-2 w-full flex items-center rounded-md bg-[#252525] px-3 py-1 border border-transparent opacity-75 hover:opacity-100 hover:border-gray-500 duration-300 shadow-md;
      }
+     .inputs {
+          @apply bg-black rounded-md px-2 mx-2 text-gray-300 placeholder:text-gray-500 hover:outline-1 placeholder:opacity-50 border border-transparent hover:border-white duration-300;
+     }
 }

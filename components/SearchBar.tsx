@@ -24,7 +24,7 @@ const SearchBar = () => {
                          onSubmit={handleSearch}
                     >
                          <input
-                              className="h-[26px] focus:border-2 border-purple-700 bg-black flex-1 rounded-tl-lg rounded-bl-lg shadow-inner focus:outline-none pl-2 placeholder:italic py-[1px]"
+                              className="h-[26px] focus:border-2 border-purple-700 bg-black flex-1 rounded-tl-lg rounded-bl-lg shadow-inner focus:outline-none pl-2 placeholder:italic py-[1px] hover:border"
                               type="text"
                               placeholder="Search..."
                               onChange={(e) =>
