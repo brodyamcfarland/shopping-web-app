@@ -26,7 +26,7 @@ const About = () => {
                                    real products that can be purchased with real
                                    currency.
                               </p>
-                              <div className="flex flex-row border mb-4 border-gray-600 divide-x-[1px] divide-gray-600 text-sm">
+                              <div className="flex flex-row border mb-4 border-gray-600 divide-x-[1px] divide-gray-600 text-sm hover:bg-[#171717] duration-300">
                                    <h3 className="flex items-center w-[5rem] ustify-center p-3 bg-[#171717]">
                                         Features
                                    </h3>
@@ -50,7 +50,7 @@ const About = () => {
                                         <li>Product Discount Logic</li>
                                    </section>
                               </div>
-                              <div className="flex flex-row mb-4 border border-gray-600 divide-x-[1px] divide-gray-600 text-sm">
+                              <div className="flex flex-row mb-4 border border-gray-600 divide-x-[1px] divide-gray-600 text-sm hover:bg-[#171717] duration-300">
                                    <h3 className="flex items-center w-[5rem] justify-center p-3 bg-[#171717]">
                                         Tools
                                    </h3>
@@ -65,7 +65,7 @@ const About = () => {
                                         <li>Icons: Heroicons & React-icons</li>
                                         <li>Notifications: React Hot Toast</li>
                                         <li>
-                                             Order History Storage: Google
+                                             Orders and History Storage: Google
                                              Firebase
                                         </li>
                                    </section>

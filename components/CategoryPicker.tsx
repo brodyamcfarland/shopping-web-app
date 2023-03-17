@@ -43,13 +43,13 @@ const CategoryPicker = ({ products }: ProductQuery) => {
                                    filter === "electronics"
                                         ? "bg-purple-600/20"
                                         : "border-gray-600"
-                              } hover:border-gray-300 hover:bg-white/10 duration-300 px-2 py-[3px] rounded-r-md md:rounded-none mr-2 md:mr-0`}
+                              } hover:border-gray-300 hover:bg-white/10 duration-300 px-2 py-[3px]`}
                          >
                               Electronics
                          </button>
                          <button
                               onClick={() => setFilter("jewelery")}
-                              className={`hidden md:block bg-black border ${
+                              className={`bg-black border ${
                                    filter === "jewelery"
                                         ? "bg-purple-600/20"
                                         : "border-gray-600"
